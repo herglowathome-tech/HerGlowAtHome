@@ -1,502 +1,121 @@
-<!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HerGlowAtHome - Premium At-Home Beauty Services</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "secondary-fixed": "#e4e2de",
-                      "inverse-surface": "#303030",
-                      "surface-bright": "#fcf9f8",
-                      "outline": "#7f7663",
-                      "on-tertiary-fixed": "#1a1c1c",
-                      "primary-fixed": "#ffe088",
-                      "error-container": "#ffdad6",
-                      "surface-container-highest": "#e4e2e1",
-                      "primary-container": "#d4af37",
-                      "surface-dim": "#dcd9d9",
-                      "on-tertiary": "#ffffff",
-                      "on-tertiary-fixed-variant": "#454747",
-                      "on-error-container": "#93000a",
-                      "on-tertiary-container": "#434546",
-                      "on-primary-fixed": "#241a00",
-                      "secondary": "#5e5e5c",
-                      "tertiary-container": "#b2b3b3",
-                      "on-primary-container": "#554300",
-                      "tertiary-fixed-dim": "#c6c6c7",
-                      "surface-container-lowest": "#ffffff",
-                      "on-primary": "#ffffff",
-                      "on-secondary-fixed-variant": "#474744",
-                      "on-secondary-fixed": "#1b1c1a",
-                      "background": "#fcf9f8",
-                      "on-background": "#1b1c1c",
-                      "secondary-fixed-dim": "#c8c6c3",
-                      "tertiary-fixed": "#e2e2e2",
-                      "surface-container-high": "#eae7e7",
-                      "error": "#ba1a1a",
-                      "primary": "#735c00",
-                      "surface-variant": "#e4e2e1",
-                      "on-secondary": "#ffffff",
-                      "on-surface-variant": "#4d4635",
-                      "on-error": "#ffffff",
-                      "tertiary": "#5d5f5f",
-                      "primary-fixed-dim": "#e9c349",
-                      "outline-variant": "#d0c5af",
-                      "on-primary-fixed-variant": "#574500",
-                      "on-secondary-container": "#636360",
-                      "inverse-primary": "#e9c349",
-                      "inverse-on-surface": "#f3f0f0",
-                      "surface-container-low": "#f6f3f2",
-                      "secondary-container": "#e1dfdc",
-                      "surface-tint": "#735c00",
-                      "on-surface": "#1b1c1c",
-                      "surface": "#fcf9f8",
-                      "surface-container": "#f0eded"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "section-gap-mobile": "64px",
-                      "gutter": "24px",
-                      "section-gap-desktop": "120px",
-                      "margin-mobile": "20px",
-                      "base": "8px",
-                      "container-max": "1200px"
-              },
-              "fontFamily": {
-                      "label-caps": [
-                              "Montserrat"
-                      ],
-                      "display-lg-mobile": [
-                              "Playfair Display"
-                      ],
-                      "display-lg": [
-                              "Playfair Display"
-                      ],
-                      "headline-md-mobile": [
-                              "Playfair Display"
-                      ],
-                      "body-lg": [
-                              "Montserrat"
-                      ],
-                      "title-sm": [
-                              "Montserrat"
-                      ],
-                      "headline-md": [
-                              "Playfair Display"
-                      ],
-                      "body-sm": [
-                              "Montserrat"
-                      ]
-              },
-              "fontSize": {
-                      "label-caps": [
-                              "12px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "display-lg-mobile": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-md-mobile": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "title-sm": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-sm": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-            },
-          },
-        }
-    </script>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HerGlowAtHome | Beauty at Your Doorstep</title>
 <style>
-        .material-symbols-outlined {
-          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .soft-shadow {
-            box-shadow: 0px 12px 32px rgba(45, 45, 45, 0.05);
-        }
-        .glass-panel {
-            background: rgba(253, 251, 247, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<nav class="hidden md:flex fixed w-full top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-primary/20 shadow-sm transition-all duration-300" id="top-nav">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto w-full">
-<a class="font-display-lg text-display-lg text-primary tracking-tight" href="#">HerGlowAtHome</a>
-<div class="flex items-center gap-8">
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors hover:scale-105 duration-200" href="#services">Services</a>
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors hover:scale-105 duration-200" href="#about">About</a>
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors hover:scale-105 duration-200" href="#offers">Offers</a>
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors hover:scale-105 duration-200" href="#service-area">Service Area</a>
-</div>
-<a class="bg-primary-container text-on-primary text-body-sm font-body-sm py-2 px-6 rounded-full hover:scale-105 transition-transform duration-200 shadow-sm hover:shadow-md" href="#contact">Book Now</a>
-</div>
-</nav>
-<!-- Hero Section -->
-<header class="relative pt-24 md:pt-0 min-h-[90vh] flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="Woman receiving a relaxing spa treatment at home" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtzwPxqViRHFr6Jzm2_WTGq_IExVMmpv3KpkbWXNAekAW1HeNuVQh2mLkBQ0tO_vX6pnc3lrGYvOeAGePf0TRjpcJz_JFG6LBSRcj9LWhaMbhLP0e7W90L3W0pClS-vAx_tsbduypslIUjmvuh093qztpQGV35qH-ZcZKsglGnv44HkQU9xnbBxkH8rAGvEX7vZULcvs8O80xR3x_m1XqsKBQ_5p6ho7rQ-YQjS7v1YN9decmRKR67ug"/>
-<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent"></div>
-</div>
-<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-section-gap-mobile md:py-section-gap-desktop">
-<div class="space-y-8 glass-panel p-8 md:p-12 rounded-2xl border border-primary/10 soft-shadow animate-fade-in-up">
-<div class="inline-flex items-center gap-2 bg-primary-container/20 text-primary-fixed-variant px-4 py-1.5 rounded-full font-label-caps text-label-caps">
-<span class="material-symbols-outlined text-sm">home_pin</span>
-<span>Chandigarh &amp; Nearby Areas</span>
-</div>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background leading-tight">
-                    Salon Beauty,<br/>
-<span class="text-primary italic">At Your Doorstep.</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                    Professional beauty services for women, delivered to the comfort and safety of your home. Experience luxury pampering without the travel.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 pt-4">
-<a class="inline-flex justify-center items-center gap-2 bg-primary-container text-on-primary py-3 px-8 rounded-full font-title-sm text-title-sm hover:scale-[1.02] transition-transform shadow-md" href="#contact">
-                        Book Your Appointment
-                    </a>
-<a class="inline-flex justify-center items-center gap-2 border-2 border-outline text-on-surface py-3 px-8 rounded-full font-title-sm text-title-sm hover:bg-surface-variant transition-colors" href="#services">
-                        View Services
-                    </a>
-</div>
-<div class="pt-6 border-t border-primary/10 flex items-center gap-4">
-<a class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed-dim transition-colors font-title-sm text-title-sm group" href="#contact">
-<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">chat</span>
-                        WhatsApp Booking
-                    </a>
-</div>
-</div>
-</div>
-</header>
-<!-- About Section -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface px-gutter" id="about">
-<div class="max-w-container-max mx-auto text-center space-y-16">
-<div class="max-w-2xl mx-auto space-y-6">
-<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Your Sanctuary, Our Expertise</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                    We bring the premium salon experience directly to you. Our certified professionals ensure the highest standards of hygiene and use only top-tier products, so you can relax completely in your own space.
-                </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Feature 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow border border-primary/5 flex flex-col items-center text-center space-y-4 hover:translate-y-[-4px] transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
-</div>
-<h3 class="font-title-sm text-title-sm text-on-surface">Hygienic &amp; Safe</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Single-use disposables and sanitized equipment for every session.</p>
-</div>
-<!-- Feature 2 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow border border-primary/5 flex flex-col items-center text-center space-y-4 hover:translate-y-[-4px] transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">spa</span>
-</div>
-<h3 class="font-title-sm text-title-sm text-on-surface">Premium Products</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">We use only reputed, high-quality brands tailored to your skin type.</p>
-</div>
-<!-- Feature 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow border border-primary/5 flex flex-col items-center text-center space-y-4 hover:translate-y-[-4px] transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">schedule</span>
-</div>
-<h3 class="font-title-sm text-title-sm text-on-surface">Absolute Convenience</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Skip the traffic and waiting rooms. We work around your schedule.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Popular Services (Bento Grid) -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low px-gutter" id="services">
-<div class="max-w-container-max mx-auto space-y-12">
-<div class="text-center space-y-4">
-<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Our Menu</span>
-<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-background">Signature Treatments</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
-<!-- Large Image Card -->
-<div class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group soft-shadow cursor-pointer">
-<img alt="Luxurious manicure and nail care setup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA406BbBtQCg-ga9P7BFSOFhTXdFHOTWdYlyBOcbvbP9cOqYpgaTjo0_CSzbMcUxq1NWtpauCQvK-265H4tpdjbVM_5Es-JJRaZmUq8MDqz89yKR-SVTpYQNNvgzlnCP6v2417lCA-uTphiaK48ZI9bX3_IfrFOaqDdY925KTmXiTNz6pgOaaBa6ryEd7A6nnWOQabrNnm6uKLKScMd6ImxBGun9ztcF8Ylx9pL6JQdh7p9K70bL-9Jow"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-8 w-full text-white">
-<h3 class="font-display-lg-mobile text-display-lg-mobile mb-2 drop-shadow-md">Nail &amp; Hand Care</h3>
-<p class="font-body-sm text-body-sm text-white/90 mb-4">Manicure, Pedicure, Extensions</p>
-<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-primary-fixed hover:text-white transition-colors">
-                            Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</span>
-</div>
-</div>
-<!-- Standard Card -->
-<div class="bg-surface-container-lowest rounded-2xl p-6 flex flex-col justify-between soft-shadow border border-primary/5 hover:border-primary/20 transition-colors group cursor-pointer">
-<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined">face_retouching_natural</span>
-</div>
-<div>
-<h3 class="font-title-sm text-title-sm text-on-surface mb-1">Facial Therapies</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Glow, Anti-aging, Acne control</p>
-</div>
-</div>
-<!-- Standard Card -->
-<div class="bg-surface-container-lowest rounded-2xl p-6 flex flex-col justify-between soft-shadow border border-primary/5 hover:border-primary/20 transition-colors group cursor-pointer">
-<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined">clean_hands</span>
-</div>
-<div>
-<h3 class="font-title-sm text-title-sm text-on-surface mb-1">Waxing &amp; Threading</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Smooth, painless hair removal</p>
-</div>
-</div>
-<!-- Large Image Card 2 -->
-<div class="md:col-span-2 rounded-2xl overflow-hidden relative group soft-shadow cursor-pointer">
-<img alt="Premium beauty and spa products arranged elegantly" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDImgX_cU7kBJcj3I79kN4XxoQPiuT7Gnor60Vu0SrFsoPjENI2VTEU-M4BdL0xrKutxXL0RF4clvszSacaR7X4DQ-i8UYK_Ez1b3dNhFF5xtriEPlq--caLP8pueYNfEcWRbCyZBGq7ZtuAp-S2pZk0ENFJJoynn0E4UiQJRhwC6vk-VDhWRFrAHMnDkCdQfbcFQdtBNmkZekLBLT6AEwe4Crv6AzFs_8U2ZXbIrPqhTpi9wogJRr0Tw"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full text-white">
-<h3 class="font-title-sm text-title-sm md:text-2xl mb-1 drop-shadow-md">Body Polishing &amp; Scrubs</h3>
-<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-primary-fixed hover:text-white transition-colors">
-                            Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</span>
-</div>
-</div>
-</div>
-<div class="text-center pt-8">
-<a class="inline-flex justify-center items-center gap-2 border border-outline text-on-surface py-3 px-8 rounded-full font-title-sm text-title-sm hover:bg-surface-variant transition-colors" href="#">
-                    View Full Menu
-                </a>
-</div>
-</div>
-</section>
-<!-- Featured Facials -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface px-gutter">
-<div class="max-w-container-max mx-auto space-y-12">
-<div class="text-center space-y-4">
-<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-background">Featured Facials</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Rejuvenate your skin with our specialized treatments.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Pricing Card 1 -->
-<div class="bg-surface-container-lowest rounded-xl p-8 soft-shadow border border-primary/10 flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
-<h3 class="font-title-sm text-title-sm text-on-surface mb-2">Cleanup</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 flex-grow">Quick refresh and pore cleansing.</p>
-<div class="flex items-end justify-between border-t border-outline/20 pt-4">
-<span class="font-display-lg-mobile text-display-lg-mobile text-primary">₹799</span>
-<button class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-sm">add</span>
-</button>
-</div>
-</div>
-<!-- Pricing Card 2 -->
-<div class="bg-surface-container-lowest rounded-xl p-8 soft-shadow border border-primary/10 flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
-<h3 class="font-title-sm text-title-sm text-on-surface mb-2">Kenpiki Facial</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 flex-grow">Deep hydration and massage.</p>
-<div class="flex items-end justify-between border-t border-outline/20 pt-4">
-<span class="font-display-lg-mobile text-display-lg-mobile text-primary">₹999</span>
-<button class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-sm">add</span>
-</button>
-</div>
-</div>
-<!-- Pricing Card 3 -->
-<div class="bg-primary-container rounded-xl p-8 soft-shadow text-on-primary flex flex-col relative overflow-hidden transform md:-translate-y-4">
-<div class="absolute top-4 right-4 bg-white/20 px-3 py-1 rounded-full font-label-caps text-[10px] uppercase tracking-wider">Popular</div>
-<h3 class="font-title-sm text-title-sm mb-2 mt-4">Bridal Glow</h3>
-<p class="font-body-sm text-body-sm text-on-primary/80 mb-6 flex-grow">Intense radiance for special occasions.</p>
-<div class="flex items-end justify-between border-t border-on-primary/20 pt-4">
-<span class="font-display-lg-mobile text-display-lg-mobile">₹1,499</span>
-<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary-container hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-sm">add</span>
-</button>
-</div>
-</div>
-<!-- Pricing Card 4 -->
-<div class="bg-surface-container-lowest rounded-xl p-8 soft-shadow border border-primary/10 flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
-<h3 class="font-title-sm text-title-sm text-on-surface mb-2">Insta Glow</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 flex-grow">Premium glass skin treatment.</p>
-<div class="flex items-end justify-between border-t border-outline/20 pt-4">
-<span class="font-display-lg-mobile text-display-lg-mobile text-primary">₹1,999</span>
-<button class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-sm">add</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- How it Works -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low px-gutter">
-<div class="max-w-container-max mx-auto">
-<div class="text-center space-y-4 mb-16">
-<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-background">Effortless Beauty</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Three simple steps to your at-home glow up.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-<!-- Connecting Line (Desktop) -->
-<div class="hidden md:block absolute top-1/2 left-[15%] right-[15%] h-[1px] bg-primary/20 -z-0"></div>
-<!-- Step 1 -->
-<div class="relative z-10 flex flex-col items-center text-center space-y-4">
-<div class="w-16 h-16 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center font-display-lg-mobile text-display-lg-mobile text-primary soft-shadow">1</div>
-<h3 class="font-title-sm text-title-sm text-on-surface mt-4">Choose Services</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Browse our menu and select the treatments you desire.</p>
-</div>
-<!-- Step 2 -->
-<div class="relative z-10 flex flex-col items-center text-center space-y-4">
-<div class="w-16 h-16 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center font-display-lg-mobile text-display-lg-mobile text-primary soft-shadow">2</div>
-<h3 class="font-title-sm text-title-sm text-on-surface mt-4">Book Appointment</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Pick a convenient date and time via WhatsApp or Call.</p>
-</div>
-<!-- Step 3 -->
-<div class="relative z-10 flex flex-col items-center text-center space-y-4">
-<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center font-display-lg-mobile text-display-lg-mobile text-on-primary soft-shadow">3</div>
-<h3 class="font-title-sm text-title-sm text-on-surface mt-4">Relax &amp; Glow</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Our expert arrives at your doorstep to pamper you.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section id="contact" class="py-section-gap-mobile md:py-section-gap-desktop bg-primary text-on-primary px-gutter text-center relative overflow-hidden">
-<!-- Abstract Background Element -->
-<div class="absolute top-0 right-0 w-96 h-96 bg-primary-fixed-dim/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-<div class="absolute bottom-0 left-0 w-96 h-96 bg-surface-container/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-<div class="max-w-2xl mx-auto space-y-8 relative z-10">
-<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Ready to Glow?</h2>
-<p class="font-body-lg text-body-lg text-on-primary/90">
-                Book your at-home salon experience today. Serving Chandigarh, Mohali, Kharar, and surrounding areas.
-            </p>
-<div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-<a class="inline-flex justify-center items-center gap-2 bg-surface text-primary py-3 px-8 rounded-full font-title-sm text-title-sm hover:scale-[1.02] transition-transform shadow-lg" href="#contact">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-                    WhatsApp Booking
-                </a>
-<a class="inline-flex justify-center items-center gap-2 border border-surface/30 text-surface py-3 px-8 rounded-full font-title-sm text-title-sm hover:bg-surface/10 transition-colors" href="#contact">
-<span class="material-symbols-outlined">call</span>
-                    Call Now
-                </a>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-inverse-surface w-full py-section-gap-desktop px-gutter border-t border-primary/10 mt-auto">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-container-max mx-auto">
-<div class="space-y-4 col-span-1 md:col-span-1">
-<h3 class="font-display-lg text-display-lg text-primary mb-2">HerGlowAtHome</h3>
-<p class="font-body-sm text-body-sm text-secondary dark:text-primary-fixed">Premium salon services at your doorstep.</p>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-sm text-title-sm text-primary dark:text-primary-fixed">Quick Links</h4>
-<ul class="space-y-2">
-<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary-container transition-colors" href="#services">Services</a></li>
-<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary-container transition-colors" href="#contact">Book Appointment</a></li>
-<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary-container transition-colors" href="#contact">Contact</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-sm text-title-sm text-primary dark:text-primary-fixed">Service Areas</h4>
-<ul class="space-y-2">
-<li><span class="font-body-sm text-body-sm text-secondary">Chandigarh</span></li>
-<li><span class="font-body-sm text-body-sm text-secondary">Mohali</span></li>
-<li><span class="font-body-sm text-body-sm text-secondary">Kharar</span></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-sm text-title-sm text-primary dark:text-primary-fixed">Legal</h4>
-<p class="font-body-sm text-body-sm text-secondary">© 2026 HerGlowAtHome. You Glow, We Go.</p>
-</div>
-</div>
-</footer>
-<!-- BottomNavBar (Mobile Only) -->
-<div class="fixed bottom-0 w-full z-50 md:hidden bg-surface dark:bg-surface-container-highest shadow-[0px_-4px_16px_rgba(0,0,0,0.05)] pb-safe">
-<div class="flex justify-around items-center p-4">
-<a class="bg-primary-container text-on-primary-container rounded-full px-6 py-2 flex items-center gap-2 active:bg-primary-fixed transition-colors hover:scale-105" href="#contact">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-<span class="font-label-caps text-label-caps">WhatsApp Booking</span>
-</a>
-<a class="text-secondary flex items-center gap-2 active:text-primary transition-colors hover:scale-105" href="#contact">
-<span class="material-symbols-outlined">call</span>
-<span class="font-label-caps text-label-caps">Call Now</span>
-</a>
-</div>
-</div>
-<!-- Padding for mobile bottom bar -->
-<div class="h-20 md:hidden"></div>
-<script>
-        // Simple script to handle TopNav styling on scroll
-        const topNav = document.getElementById('top-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                topNav.classList.add('shadow-md');
-                topNav.classList.remove('shadow-sm', 'border-primary/20');
-                topNav.classList.add('border-primary/10');
-            } else {
-                topNav.classList.remove('shadow-md');
-                topNav.classList.add('shadow-sm', 'border-primary/20');
-                topNav.classList.remove('border-primary/10');
-            }
-        });
-    </script>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fbf7ef;color:#26351f}
+header{padding:48px 20px;text-align:center;background:linear-gradient(135deg,#f8efe0,#fffaf2);border-bottom:1px solid #d8bd7b}
+h1{font-family:Georgia,serif;font-size:44px;margin:0;color:#26351f}header p{font-size:17px;color:#806b42}
+.hero{max-width:1100px;margin:auto;padding:35px 20px;text-align:center}
+.hero h2{font-family:Georgia,serif;font-size:32px;margin:10px}
+.hero .book{display:inline-block;background:#263f2b;color:white;padding:14px 24px;border-radius:30px;text-decoration:none;margin-top:10px}
+.grid{max-width:1100px;margin:auto;padding:10px 20px 50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:white;border:1px solid #e4d5b2;border-radius:20px;padding:18px;text-align:center;box-shadow:0 5px 20px #0000000d}
+.pic{height:150px;border-radius:15px;background:linear-gradient(135deg,#eee2cc,#d9c28a);display:flex;align-items:center;justify-content:center;color:#263f2b;font-family:Georgia,serif;font-size:20px}
+.card h3{min-height:48px;font-family:Georgia,serif;font-size:20px}
+.price{font-size:24px;font-weight:bold;color:#8a6b2d;margin:12px}
+.btn{display:block;background:#263f2b;color:#fff;padding:12px;border-radius:25px;text-decoration:none}
+footer{text-align:center;padding:30px;background:#263f2b;color:#fff}
+</style></head>
+<body>
+<header><h1>HerGlowAtHome</h1><p>You Glow, We Go! • Beauty at Your Doorstep</p></header>
+<section class="hero"><h2>Our Beauty Services</h2>
+<p>Premium salon services at home in Chandigarh & nearby areas.</p>
+<a class="book" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20a%20service." target="_blank">WhatsApp Booking</a></section>
+<main class="grid"><article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Cleanup</h3>
+<div class="price">₹799</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Cleanup." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Kenpiki Facial</h3>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Kenpiki%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Bridal Glow Facial</h3>
+<div class="price">₹1,499</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Bridal%20Glow%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Insta Glow Facial</h3>
+<div class="price">₹1,999</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Insta%20Glow%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Fruit Facial</h3>
+<div class="price">₹649</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Fruit%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Full Arms Honey Wax</h3>
+<div class="price">₹299</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Full%20Arms%20Honey%20Wax." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Underarms Honey Wax</h3>
+<div class="price">₹65</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Underarms%20Honey%20Wax." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Classic Pedicure</h3>
+<div class="price">₹399</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Classic%20Pedicure." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Professional Diamond Facial</h3>
+<div class="price">₹799</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Professional%20Diamond%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Full Body Honey Wax</h3>
+<div class="price">₹849</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Full%20Body%20Honey%20Wax." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Classic Mani &amp; Pedi Combo</h3>
+<div class="price">₹699</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Classic%20Mani%20&%20Pedi%20Combo." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Face &amp; Neck De-Tan</h3>
+<div class="price">₹349</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Face%20&%20Neck%20De-Tan." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>O3+ Shine &amp; Glow Facial</h3>
+<div class="price">₹1,299</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20O3+%20Shine%20&%20Glow%20Facial." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>O3+ Bubble Gum Mani &amp; Pedi</h3>
+<div class="price">₹1,199</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20O3+%20Bubble%20Gum%20Mani%20&%20Pedi." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Eyebrows Threading</h3>
+<div class="price">₹49</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Eyebrows%20Threading." target="_blank">Book on WhatsApp</a>
+</article>
+<article class="card">
+<div class="pic">HerGlowAtHome</div>
+<h3>Other Services</h3>
+<div class="price">Price on WhatsApp</div>
+<a class="btn" href="https://wa.me/917087128778?text=Hi%20HerGlowAtHome%2C%20I%20want%20to%20book%20Other%20Services." target="_blank">Book on WhatsApp</a>
+</article></main>
+<footer>HerGlowAtHome • WhatsApp: 7087128778<br>You Glow, We Go.</footer>
 </body></html>
