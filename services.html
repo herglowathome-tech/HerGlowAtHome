@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerGlowAtHome | Services & Booking</title>
+  <style>
+    :root{--cream:#fffaf2;--gold:#b58a45;--dark:#2b241d;--white:#fff;--line:#eadcc7}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--dark)}
+    a{text-decoration:none;color:inherit}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(255,250,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+    .brand{font-size:22px;font-weight:700}.brand span{color:var(--gold)}
+    .nav a{margin-left:18px;font-size:14px}
+    header{max-width:1100px;margin:auto;padding:55px 20px 25px;text-align:center}
+    h1,h2{font-family:Georgia,serif}
+    h1{font-size:46px;margin:0 0 8px}.sub{color:#75695c}
+    main{max-width:1100px;margin:auto;padding:20px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(70,45,20,.05)}
+    .service h3{margin:0 0 6px}.price{font-size:22px;font-weight:800;color:var(--gold)}
+    .service p{color:#75695c;font-size:14px;min-height:42px}
+    label.select{display:flex;gap:9px;align-items:center;font-weight:700;cursor:pointer}
+    input[type=checkbox]{width:18px;height:18px;accent-color:#b58a45}
+    .summary{position:sticky;bottom:12px;background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin:30px 0;box-shadow:0 10px 30px rgba(70,45,20,.12)}
+    .summary-row{display:flex;justify-content:space-between;gap:15px}.total{font-size:26px;font-weight:800;color:var(--gold)}
+    .form{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin:25px 0 50px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,textarea{width:100%;padding:12px;border:1px solid #dbcdbb;border-radius:10px;font:inherit}
+    textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
+    .btn{display:inline-block;padding:12px 20px;border-radius:30px;border:1px solid var(--gold);font-weight:700;background:white}
+    .btn.primary{background:var(--gold);color:white}
+    .footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#75695c}
+    @media(max-width:760px){.services{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.full{grid-column:auto}.nav-inner{flex-direction:column;gap:8px}.nav a{margin:0 7px}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Her<span>Glow</span>AtHome</a>
+      <div><a href="index.html">Home</a><a href="services.html">Services & Booking</a></div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Services & Booking</h1>
+    <p class="sub">Select multiple services — your total updates automatically.</p>
+  </header>
+
+  <main>
+    <div id="services" class="services"></div>
+
+    <div class="summary">
+      <div class="summary-row"><strong>Selected Services</strong><strong id="count">0</strong></div>
+      <div id="selected" style="margin:10px 0;color:#75695c">No services selected.</div>
+      <div class="summary-row"><strong>Total</strong><span class="total" id="total">₹0</span></div>
+    </div>
+
+    <div class="form">
+      <h2>Booking Request</h2>
+      <p class="sub">Fill in your details and send the selected services to WhatsApp.</p>
+      <div class="fields">
+        <div><label>Name<br><input id="name" placeholder="Your name"></label></div>
+        <div><label>Phone<br><input id="phone" placeholder="Your phone number"></label></div>
+        <div><label>Preferred Date<br><input id="date" type="date"></label></div>
+        <div><label>Preferred Time<br><input id="time" type="time"></label></div>
+        <div class="full"><label>Service Address<br><input id="address" placeholder="Your complete service address"></label></div>
+        <div class="full"><label>Note (optional)<br><textarea id="note" placeholder="Any special request?"></textarea></label></div>
+      </div>
+      <br>
+      <button class="btn primary" onclick="sendWhatsApp()">Send Booking on WhatsApp</button>
+    </div>
+  </main>
+
+  <footer class="footer">HerGlowAtHome · You Glow, We Go.</footer>
+
+  <script>
+    // Add/edit services and prices here later.
+    const services = [
+      ["Cleanup",799],["Korean Glass Skin Facial",699],["Bridal Glow Facial",1499],
+      ["Insta Glow Facial",1999],["Fruit Facial",649],["Professional Diamond Facial",799],
+      ["Full Arms Honey Wax",299],["Full Legs Honey Wax",399],["Underarms Honey Wax",65],
+      ["Full Body Honey Wax",849],["Classic Manicure",349],["Classic Pedicure",399],
+      ["Classic Mani & Pedi Combo",699],["Face & Neck De-Tan",349],
+      ["Eyebrows Threading",49],["O3+ Shine & Glow Facial",1299],
+      ["O3+ Bubble Gum Mani & Pedi",1199]
+    ];
+
+    const container=document.getElementById("services");
+    const selected=new Map();
+
+    services.forEach(([name,price],i)=>{
+      const el=document.createElement("div");
+      el.className="service";
+      el.innerHTML=`<h3>${name}</h3><div class="price">₹${price.toLocaleString("en-IN")}</div>
+        <p>Professional at-home beauty service.</p>
+        <label class="select"><input type="checkbox" data-i="${i}"> Select Service</label>`;
+      container.appendChild(el);
+    });
+
+    container.addEventListener("change",e=>{
+      if(!e.target.matches("input")) return;
+      const i=Number(e.target.dataset.i), [name,price]=services[i];
+      e.target.checked ? selected.set(i,{name,price}) : selected.delete(i);
+      update();
+    });
+
+    function update(){
+      let total=0;
+      const names=[];
+      selected.forEach(s=>{total+=s.price;names.push(s.name)});
+      document.getElementById("count").textContent=selected.size;
+      document.getElementById("total").textContent="₹"+total.toLocaleString("en-IN");
+      document.getElementById("selected").textContent=names.length?names.join(" • "):"No services selected.";
+    }
+
+    function sendWhatsApp(){
+      if(!selected.size){alert("Please select at least one service.");return;}
+      const name=document.getElementById("name").value.trim();
+      const phone=document.getElementById("phone").value.trim();
+      const date=document.getElementById("date").value;
+      const time=document.getElementById("time").value;
+      const address=document.getElementById("address").value.trim();
+      const note=document.getElementById("note").value.trim();
+      if(!name||!phone||!date||!time||!address){alert("Please fill Name, Phone, Date, Time and Address.");return;}
+      let total=0, list=[];
+      selected.forEach(s=>{total+=s.price;list.push(`${s.name} - ₹${s.price}`)});
+      const msg=`Hello HerGlowAtHome,%0A%0AI would like to book:%0A${list.join("%0A")}%0A%0ATotal: ₹${total}%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADate: ${date}%0ATime: ${time}%0AAddress: ${encodeURIComponent(address)}%0ANote: ${encodeURIComponent(note||"None")}`;
+      // Replace 91XXXXXXXXXX with the final HerGlowAtHome WhatsApp number.
+      window.open("https://wa.me/91XXXXXXXXXX?text="+msg,"_blank");
+    }
+  </script>
+</body>
+</html>
