@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HerGlowAtHome - Premium beauty and salon services at your doorstep.">
+<title>HerGlowAtHome | You Glow, We Go.</title>
+<style>
+:root{--cream:#fffaf2;--gold:#b58a45;--dark:#2b241d;--white:#fff;--line:#eadcc7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,250,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:22px;font-weight:700}.brand span{color:var(--gold)}.nav a{margin-left:18px;font-size:14px}
+.hero{max-width:1100px;margin:auto;padding:75px 20px 55px;text-align:center}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,76px);line-height:1.05;margin:12px 0}
+h2{font-family:Georgia,serif;font-size:34px;margin:0 0 12px;text-align:center}
+.tagline{font-size:20px;color:#6f6255;margin:0 auto 25px}
+.buttons,.socials,.review-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:30px;border:1px solid var(--gold);font-weight:700}
+.btn.primary{background:var(--gold);color:white}
+.socials{margin-top:25px}.socials a{background:white;border:1px solid var(--line);padding:9px 14px;border-radius:22px;font-size:14px}
+section{max-width:1100px;margin:auto;padding:55px 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 8px 25px rgba(70,45,20,.05)}
+.section-sub{text-align:center;color:#75695c;margin:0 auto 28px;max-width:700px}
+.area{text-align:center;font-size:19px;font-weight:700}
+.review-box{background:linear-gradient(135deg,#fff,#f8eedf);border:1px solid #e6d3b5;border-radius:22px;padding:30px;text-align:center}
+.stars{font-size:25px;letter-spacing:3px}.review-actions{margin-top:18px}
+.footer{padding:28px 20px;text-align:center;border-top:1px solid var(--line);color:#75695c}
+@media(max-width:760px){
+.grid{grid-template-columns:1fr}.nav-inner{flex-direction:column;gap:8px}.nav a{margin:0 7px}
+.hero{padding-top:55px}section{padding:42px 18px}
+}
+</style>
+</head>
+<body>
 
+<nav class="nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">Her<span>Glow</span>AtHome</a>
+<div><a href="index.html">Home</a><a href="services.html">Services & Booking</a></div>
+</div>
+</nav>
+
+<header class="hero">
+<div class="eyebrow">Premium Beauty Services At Your Doorstep</div>
+<h1>HerGlowAtHome</h1>
+<p class="tagline">You Glow, We Go.</p>
+<div class="buttons">
+<a class="btn primary" href="services.html">View Services & Book</a>
+<a class="btn" href="mailto:herglowathome@gmail.com">Email Us</a>
+</div>
+<div class="socials">
+<a href="https://www.instagram.com/herglowathome/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.facebook.com/share/1H6tWWLqWZ/" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.linkedin.com/in/rajdeep-kaur-b24388423/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</header>
+
+<section>
+<h2>About HerGlowAtHome</h2>
+<p class="section-sub">Professional beauty and salon services delivered to your doorstep, with a focus on comfort, convenience and a beautiful experience at home.</p>
+<div class="grid">
+<div class="card"><h3>At-Home Convenience</h3><p>Enjoy your beauty services from the comfort of your own home.</p></div>
+<div class="card"><h3>Professional Service</h3><p>Carefully selected beauty services designed for a premium at-home experience.</p></div>
+<div class="card"><h3>Easy Booking</h3><p>Choose your services, see your total and send your booking request online.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Our Service Area</h2>
+<p class="section-sub">Currently serving Chandigarh, Mohali, Kharar and nearby areas. Please confirm your exact location before booking.</p>
+<div class="card area">Chandigarh • Mohali• panchkula  • Kharar • Nearby Areas</div>
+</section>
+
+<section id="reviews">
+<h2>Client Reviews</h2>
+<p class="section-sub">Loved your experience? Read what clients say or leave your own Google review.</p>
+<div class="review-box">
+<div class="stars">★★★★★</div>
+<h3>Read & Write a Review</h3>
+<p>Share your experience with HerGlowAtHome on Google.</p>
+<div class="review-actions">
+<a class="btn primary" href="https://g.page/r/CWMuubBKmSIrEBM/review" target="_blank" rel="noopener">Read Reviews</a>
+<a class="btn" href="https://g.page/r/CWMuubBKmSIrEBM/review" target="_blank" rel="noopener">Write a Review</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="card" style="text-align:center">
+<h2>Ready to Glow?</h2>
+<p>Choose your services and get your estimated total instantly.</p>
+<a class="btn primary" href="services.html">Explore Services</a>
+</div>
+</section>
+
+<footer class="footer">
+<strong>HerGlowAtHome</strong> · You Glow, We Go.<br>
+<a href="mailto:herglowathome@gmail.com">herglowathome@gmail.com</a>
+</footer>
+
+</body>
+</html>
