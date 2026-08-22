@@ -1,135 +1,986 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HerGlowAtHome | Services & Booking</title>
-  <style>
-    :root{--cream:#fffaf2;--gold:#b58a45;--dark:#2b241d;--white:#fff;--line:#eadcc7}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--dark)}
-    a{text-decoration:none;color:inherit}
-    .nav{position:sticky;top:0;z-index:10;background:rgba(255,250,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav-inner{max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
-    .brand{font-size:22px;font-weight:700}.brand span{color:var(--gold)}
-    .nav a{margin-left:18px;font-size:14px}
-    header{max-width:1100px;margin:auto;padding:55px 20px 25px;text-align:center}
-    h1,h2{font-family:Georgia,serif}
-    h1{font-size:46px;margin:0 0 8px}.sub{color:#75695c}
-    main{max-width:1100px;margin:auto;padding:20px}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .service{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(70,45,20,.05)}
-    .service h3{margin:0 0 6px}.price{font-size:22px;font-weight:800;color:var(--gold)}
-    .service p{color:#75695c;font-size:14px;min-height:42px}
-    label.select{display:flex;gap:9px;align-items:center;font-weight:700;cursor:pointer}
-    input[type=checkbox]{width:18px;height:18px;accent-color:#b58a45}
-    .summary{position:sticky;bottom:12px;background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin:30px 0;box-shadow:0 10px 30px rgba(70,45,20,.12)}
-    .summary-row{display:flex;justify-content:space-between;gap:15px}.total{font-size:26px;font-weight:800;color:var(--gold)}
-    .form{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin:25px 0 50px}
-    .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    input,textarea{width:100%;padding:12px;border:1px solid #dbcdbb;border-radius:10px;font:inherit}
-    textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
-    .btn{display:inline-block;padding:12px 20px;border-radius:30px;border:1px solid var(--gold);font-weight:700;background:white}
-    .btn.primary{background:var(--gold);color:white}
-    .footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#75695c}
-    @media(max-width:760px){.services{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.full{grid-column:auto}.nav-inner{flex-direction:column;gap:8px}.nav a{margin:0 7px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="HerGlowAtHome services and booking - premium beauty, skincare, waxing, hair, manicure, pedicure and wellness services at your doorstep.">
+
+<title>HerGlowAtHome | Services & Booking</title>
+
+<style>
+:root{
+  --cream:#fffaf2;
+  --gold:#b58a45;
+  --gold-light:#ead8b8;
+  --dark:#2b241d;
+  --muted:#75695c;
+  --white:#fff;
+  --line:#eadcc7;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.5;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,250,242,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  font-size:22px;
+  font-weight:700;
+}
+
+.brand span{color:var(--gold)}
+
+.nav-links a{
+  margin-left:18px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:55px 20px 30px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+h1,h2{
+  font-family:Georgia,serif;
+}
+
+h1{
+  font-size:clamp(38px,7vw,58px);
+  margin:10px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  margin:0 auto;
+  max-width:700px;
+}
+
+.area{
+  margin:25px auto 0;
+  max-width:700px;
+  padding:14px 18px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:15px 20px 50px;
+}
+
+/* CATEGORY */
+
+.category{
+  margin:30px 0;
+  scroll-margin-top:90px;
+}
+
+.category-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:18px 20px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px 18px 0 0;
+}
+
+.category-title h2{
+  margin:0;
+  font-size:25px;
+}
+
+.category-title span{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:700;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  padding:15px;
+  background:#fffdf9;
+  border:1px solid var(--line);
+  border-top:0;
+  border-radius:0 0 18px 18px;
+}
+
+.service{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:18px;
+  transition:.2s;
+}
+
+.service:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(70,45,20,.08);
+}
+
+.service h3{
+  font-size:16px;
+  margin:0 0 8px;
+}
+
+.price{
+  color:var(--gold);
+  font-size:21px;
+  font-weight:800;
+}
+
+.duration{
+  display:inline-block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
+  background:#fff8eb;
+  padding:4px 9px;
+  border-radius:20px;
+}
+
+.select{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  accent-color:var(--gold);
+}
+
+/* SUMMARY */
+
+.summary{
+  position:sticky;
+  bottom:12px;
+  z-index:50;
+  background:white;
+  border:1px solid var(--gold-light);
+  border-radius:18px;
+  padding:18px 20px;
+  margin:30px 0;
+  box-shadow:0 10px 30px rgba(70,45,20,.15);
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.selected-list{
+  margin:10px 0;
+  color:var(--muted);
+  font-size:14px;
+  max-height:90px;
+  overflow:auto;
+}
+
+.total{
+  color:var(--gold);
+  font-size:27px;
+  font-weight:800;
+}
+
+/* FORM */
+
+.form{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  margin:35px 0 20px;
+}
+
+.form h2{
+  margin-top:0;
+  text-align:center;
+}
+
+.form-sub{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+.fields{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+label{
+  font-size:13px;
+  font-weight:700;
+}
+
+input,
+textarea{
+  width:100%;
+  margin-top:6px;
+  padding:12px 13px;
+  border:1px solid #dbcdbb;
+  border-radius:10px;
+  background:#fffdfa;
+  font:inherit;
+  color:var(--dark);
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--gold);
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:30px;
+  border:1px solid var(--gold);
+  font-weight:700;
+  cursor:pointer;
+  background:white;
+}
+
+.btn.primary{
+  background:var(--gold);
+  color:white;
+}
+
+.form-button{
+  text-align:center;
+  margin-top:20px;
+}
+
+.note{
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:12px;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  border-top:1px solid var(--line);
+  padding:28px 20px;
+  color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+
+  .nav-inner{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .nav-links a{
+    margin:0 7px;
+  }
+
+  .hero{
+    padding-top:40px;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .fields{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .category-title{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .summary{
+    bottom:6px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">Her<span>Glow</span>AtHome</a>
-      <div><a href="index.html">Home</a><a href="services.html">Services & Booking</a></div>
-    </div>
-  </nav>
 
-  <header>
-    <h1>Services & Booking</h1>
-    <p class="sub">Select multiple services — your total updates automatically.</p>
-  </header>
+<nav class="nav">
+  <div class="nav-inner">
 
-  <main>
-    <div id="services" class="services"></div>
+    <a class="brand" href="index.html">
+      Her<span>Glow</span>AtHome
+    </a>
 
-    <div class="summary">
-      <div class="summary-row"><strong>Selected Services</strong><strong id="count">0</strong></div>
-      <div id="selected" style="margin:10px 0;color:#75695c">No services selected.</div>
-      <div class="summary-row"><strong>Total</strong><span class="total" id="total">₹0</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Booking</a>
     </div>
 
-    <div class="form">
-      <h2>Booking Request</h2>
-      <p class="sub">Fill in your details and send the selected services to WhatsApp.</p>
-      <div class="fields">
-        <div><label>Name<br><input id="name" placeholder="Your name"></label></div>
-        <div><label>Phone<br><input id="phone" placeholder="Your phone number"></label></div>
-        <div><label>Preferred Date<br><input id="date" type="date"></label></div>
-        <div><label>Preferred Time<br><input id="time" type="time"></label></div>
-        <div class="full"><label>Service Address<br><input id="address" placeholder="Your complete service address"></label></div>
-        <div class="full"><label>Note (optional)<br><textarea id="note" placeholder="Any special request?"></textarea></label></div>
+  </div>
+</nav>
+
+
+<header class="hero">
+
+  <div class="eyebrow">
+    Premium Beauty Services At Your Doorstep
+  </div>
+
+  <h1>Services & Booking</h1>
+
+  <p>
+    Explore our complete range of beauty, skincare, waxing, hair and
+    wellness services. Select multiple services to see your estimated total.
+  </p>
+
+  <div class="area">
+    Chandigarh • Mohali • Panchkula • Kharar
+  </div>
+
+</header>
+
+
+<main>
+
+  <div id="servicesContainer"></div>
+
+
+  <!-- BOOKING SUMMARY -->
+
+  <div class="summary">
+
+    <div class="summary-row">
+      <strong>Selected Services</strong>
+      <strong id="count">0</strong>
+    </div>
+
+    <div id="selected" class="selected-list">
+      No services selected.
+    </div>
+
+    <div class="summary-row">
+      <strong>Total</strong>
+      <span id="total" class="total">₹0</span>
+    </div>
+
+  </div>
+
+
+  <!-- BOOKING FORM -->
+
+  <div class="form">
+
+    <h2>Booking Request</h2>
+
+    <p class="form-sub">
+      Fill in your details and send your selected services directly to
+      HerGlowAtHome on WhatsApp.
+    </p>
+
+    <div class="fields">
+
+      <div>
+        <label>
+          Name
+          <input id="name" placeholder="Your name">
+        </label>
       </div>
-      <br>
-      <button class="btn primary" onclick="sendWhatsApp()">Send Booking on WhatsApp</button>
+
+      <div>
+        <label>
+          Phone
+          <input id="phone" type="tel" placeholder="Your phone number">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Preferred Date
+          <input id="date" type="date">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Preferred Time
+          <input id="time" type="time">
+        </label>
+      </div>
+
+      <div class="full">
+        <label>
+          Service Address
+          <input id="address" placeholder="Complete service address">
+        </label>
+      </div>
+
+      <div class="full">
+        <label>
+          Note (Optional)
+          <textarea id="note" placeholder="Any special request?"></textarea>
+        </label>
+      </div>
+
     </div>
-  </main>
 
-  <footer class="footer">HerGlowAtHome · You Glow, We Go.</footer>
+    <div class="form-button">
 
-  <script>
-    // Add/edit services and prices here later.
-    const services = [
-      ["Cleanup",799],["Korean Glass Skin Facial",699],["Bridal Glow Facial",1499],
-      ["Insta Glow Facial",1999],["Fruit Facial",649],["Professional Diamond Facial",799],
-      ["Full Arms Honey Wax",299],["Full Legs Honey Wax",399],["Underarms Honey Wax",65],
-      ["Full Body Honey Wax",849],["Classic Manicure",349],["Classic Pedicure",399],
-      ["Classic Mani & Pedi Combo",699],["Face & Neck De-Tan",349],
-      ["Eyebrows Threading",49],["O3+ Shine & Glow Facial",1299],
-      ["O3+ Bubble Gum Mani & Pedi",1199]
-    ];
+      <button class="btn primary" onclick="sendWhatsApp()">
+        Send Booking on WhatsApp
+      </button>
 
-    const container=document.getElementById("services");
-    const selected=new Map();
+    </div>
 
-    services.forEach(([name,price],i)=>{
-      const el=document.createElement("div");
-      el.className="service";
-      el.innerHTML=`<h3>${name}</h3><div class="price">₹${price.toLocaleString("en-IN")}</div>
-        <p>Professional at-home beauty service.</p>
-        <label class="select"><input type="checkbox" data-i="${i}"> Select Service</label>`;
-      container.appendChild(el);
+    <div class="note">
+      Booking will be confirmed after availability is checked.
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer class="footer">
+
+  <strong>HerGlowAtHome</strong><br>
+  You Glow, We Go.<br>
+  Chandigarh • Mohali • Panchkula • Kharar
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   HERGLOW AT HOME SERVICES
+   ========================================================= */
+
+const categories = [
+
+{
+name:"💆 Facials & Skincare Services",
+services:[
+
+["VLCC Fruit",599,"00:50"],
+["Lotus Gold Facial",799,"01:00"],
+["Lotus Pearl / Lotus Pearl Facial",749,"01:00"],
+["FYC Brightening / Brightning",899,"01:00"],
+["O3+ Pigmentation and Anti Ageing",1299,"01:00"],
+["O3+ De Tan & Whitening",1099,"01:00"],
+["O3+ Signature Glow Facial",1799,"01:20"],
+["Raaga for Oily Skin / Dry Skin",699,"00:50"],
+["VLCC Skin Tightning",599,"00:50"],
+["Aroma Gel Fruit",749,"01:10"],
+["Pilgrim Gold Facial (Herbal Extracts)",799,"01:00"],
+["Pilgrim De Tan Facial (Herbal Extracts)",849,"01:00"],
+["Aroma Gel Bridal Glow",949,"01:10"],
+["O3+ Whitening",1099,"01:00"],
+["O3+ De Tan",1099,"01:00"],
+["FYC Anti Ageing",1049,"01:00"],
+["FYC Acne Pro Skin",1199,"01:00"],
+["KANPEKI Ivory White",1199,"01:00"],
+["O3+ Anti Ageing",1299,"01:00"],
+["FYC Hydra Boost Facial",1999,"01:20"],
+["FYC Korean Facial",2999,"01:30"],
+["FYC De Tan",899,"01:00"]
+
+]},
+
+{
+name:"🍯 Rica Wax Services",
+services:[
+
+["Full Body",1499,"01:30"],
+["Full Body + Bikini",1999,"02:30"],
+["Full Arms + Full Legs + Bikini",1399,"01:20"],
+["Full Arms with Underarms and Full Legs",749,"01:00"],
+["Bikini + Butt",749,"01:00"],
+["Rica Bikini",599,"00:40"],
+["Full Leg",449,"00:30"],
+["Full Arms with Underarms",399,"00:20"],
+["Full Back",399,"00:20"],
+["Stomach",349,"00:20"],
+["Half Leg",299,"00:30"],
+["Half Arms",299,"00:20"],
+["Half Back",249,"00:20"],
+["Butt Wax",499,"00:30"],
+["Underarms",149,"00:20"]
+
+]},
+
+{
+name:"🍯 Honey Wax Services",
+services:[
+
+["Full Body + Bikini",1349,"02:20"],
+["Full Body",1249,"02:00"],
+["Full Arms with Underarms and Full Legs + Bikini",999,"01:20"],
+["Bikini + Butt",599,"01:00"],
+["Full Arms with Underarms and Full Legs",549,"01:00"],
+["Honey Bikini",499,"00:40"],
+["Full Leg",349,"00:30"],
+["Full Back",299,"00:20"],
+["Full Arms with Underarms",299,"00:20"],
+["Butt Wax",249,"00:30"],
+["Stomach",249,"00:10"],
+["Half Arms",199,"00:20"],
+["Half Leg",199,"00:10"],
+["Underarms",99,"00:20"]
+
+]},
+
+{
+name:"✨ Cleanups Services",
+services:[
+
+["VLCC's Fruit Cleanup",399,"00:30"],
+["Lotus Pearl Cleanup",499,"00:30"],
+["Lotus Gold Cleanup",549,"00:30"],
+["O3+ Cleanup",788,"00:10"]
+
+]},
+
+{
+name:"💅 Manicure & Pedicure Services",
+services:[
+
+["Basic Manicure Pedicure",699,"01:00"],
+["D-Tan Manicure Pedicure",849,"01:10"],
+["Basic Pedicure",449,"00:40"],
+["D-Tan Pedicure",549,"00:40"],
+["Basic Manicure",349,"00:30"],
+["D-Tan Manicure",449,"00:30"],
+["O3+ Manicure & Pedicure",999,"01:00"],
+["Hydra Boost Meni Pedi",1249,"01:50"],
+["Korean Glass Meni Pedi",1499,"01:50"]
+
+]},
+
+{
+name:"✨ Brazilian & Intense Whitening Services",
+services:[
+
+["Face Wax",349,"00:30"],
+["Side Lock",199,"00:20"],
+["Forehead",99,"00:10"],
+["Upperlip",99,"00:10"],
+["Chin",99,"00:10"],
+["Underarms",199,"00:20"],
+["Bikini",699,"00:30"],
+["Bikini + Underarms",799,"00:40"],
+["Neck",299,"00:30"],
+["Elbows + Knees",299,"00:30"],
+["Elbows + Knees & Neck",299,"00:40"],
+["Intense Underarms",299,"00:30"],
+["Intense Neck",299,"00:30"],
+["Intense Underarms + Bikini",499,"00:40"],
+["Intense Elbows + Knees",299,"00:30"],
+["Bikini + Underarms + Neck + Elbow + Knee",899,"00:30"]
+
+]},
+
+{
+name:"💆‍♀️ Keratin Hair Spa Services",
+services:[
+
+["Keratin Hair Spa (Shoulder Length)",599,"00:40"],
+["Keratin Hair Spa (Mid Back Length)",999,"01:00"],
+["Keratin Hair Spa (Waist Length)",1349,"01:10"],
+["Keratin Hair Spa (Below Waist Length)",1499,"01:30"]
+
+]},
+
+{
+name:"🎨 Global Hair Color Services",
+services:[
+
+["Global Hair Color (Shoulder Length)",1099,"00:40"],
+["Global Hair Color (Mid Back Length)",1299,"00:50"],
+["Global Hair Color (Waist Length)",1999,"01:20"],
+["Global Hair Color (Below Waist Length)",2199,"01:20"]
+
+]},
+
+{
+name:"✨ Keratin Treatment Services",
+services:[
+
+["Keratin Treatment (Shoulder Length)",1999,"02:30"],
+["Keratin Treatment (Mid Back Length)",2499,"03:30"],
+["Keratin Treatment (Waist Length)",2999,"04:30"]
+
+]},
+
+{
+name:"🌿 Root Touch-Up & Mehndi Services",
+services:[
+
+["Root Touch-up with Our Product (Hair Color)",749,"00:20"],
+["Root Touch-up with Client Product",199,"00:20"],
+["Mehndi Application with Client Product",249,"00:30"]
+
+]},
+
+{
+name:"💆 Spa & Body Massage Services",
+services:[
+
+["Full Body Massage",799,"00:50"],
+["Scrub + Body Massage",1299,"01:10"],
+["Head Massage",249,"00:20"],
+["Head & Shoulder Massage",399,"00:30"],
+["Head & Foot Massage",399,"00:40"],
+["Foot Massage",349,"00:30"],
+["Back Massage",249,"00:20"],
+["Arms Massage",249,"00:20"],
+["Herbal Massage",999,"01:00"],
+["Potli Massage",1299,"01:10"],
+["Full Body Polishing",1599,"01:20"],
+["Hydra Boost Body Polishing",2499,"01:40"]
+
+]},
+
+{
+name:"🧴 Scrub Services",
+services:[
+
+["Full Body Scrub",699,"01:00"],
+["Full Arms with Underarms Scrub",249,"00:30"],
+["Half Arms Scrub",125,"00:20"],
+["Full Legs Scrub",299,"00:30"],
+["Half Legs Scrub",149,"00:20"],
+["Half Back Scrub",149,"00:20"],
+["Stomach Scrub",199,"00:20"],
+["Foot Scrub",99,"00:20"],
+["Hand Scrub",99,"00:20"],
+["Full Back Scrub",299,"00:20"]
+
+]},
+
+{
+name:"🧴 Bleach Services",
+services:[
+
+["Full Body Bleach",650,"00:40"],
+["Full Body + Face & Neck Bleach",799,"01:00"],
+["Face + Neck Bleach",199,"00:20"],
+["Full Arms Bleach",199,"00:20"],
+["Half Arms Bleach",99,"00:10"],
+["Full Legs Bleach",399,"00:20"],
+["Half Legs Bleach",199,"00:20"],
+["Full Back Bleach",299,"00:30"],
+["Half Back Bleach",150,"00:20"],
+["Underarms Bleach",99,"00:20"],
+["Foot Bleach",149,"00:20"]
+
+]},
+
+{
+name:"☀️ D-Tan Services",
+services:[
+
+["Full Body D-Tan",599,"00:40"],
+["Full Body + Face & Neck D-Tan",749,"01:00"],
+["Face + Neck D-Tan",175,"00:20"],
+["Full Arms D-Tan",175,"00:20"],
+["Half Arms D-Tan",75,"00:20"],
+["Full Legs D-Tan",349,"00:20"],
+["Half Legs D-Tan",175,"00:20"],
+["Full Back D-Tan",249,"00:20"],
+["Half Back D-Tan",125,"00:10"],
+["Underarms D-Tan",49,"00:20"],
+["Foot D-Tan",99,"00:20"]
+
+]}
+
+];
+
+
+/* =========================================================
+   BUILD SERVICES
+   ========================================================= */
+
+const container=document.getElementById("servicesContainer");
+const selected=new Map();
+
+let serviceIndex=0;
+
+categories.forEach(category=>{
+
+  const section=document.createElement("section");
+  section.className="category";
+
+  const title=document.createElement("div");
+  title.className="category-title";
+
+  title.innerHTML=`
+    <h2>${category.name}</h2>
+    <span>${category.services.length} Services</span>
+  `;
+
+  const grid=document.createElement("div");
+  grid.className="services";
+
+  category.services.forEach(service=>{
+
+    const [name,price,duration]=service;
+    const index=serviceIndex++;
+
+    const card=document.createElement("div");
+    card.className="service";
+
+    card.innerHTML=`
+
+      <h3>${name}</h3>
+
+      <div class="price">
+        ₹${price.toLocaleString("en-IN")}
+      </div>
+
+      <span class="duration">
+        ⏱ ${duration}
+      </span>
+
+      <label class="select">
+
+        <input
+          type="checkbox"
+          data-index="${index}"
+          data-name="${name}"
+          data-price="${price}"
+          data-duration="${duration}"
+        >
+
+        Select Service
+
+      </label>
+
+    `;
+
+    grid.appendChild(card);
+
+  });
+
+  section.appendChild(title);
+  section.appendChild(grid);
+
+  container.appendChild(section);
+
+});
+
+
+/* =========================================================
+   SERVICE SELECTION
+   ========================================================= */
+
+container.addEventListener("change",function(e){
+
+  if(!e.target.matches('input[type="checkbox"]')) return;
+
+  const checkbox=e.target;
+
+  const index=checkbox.dataset.index;
+
+  if(checkbox.checked){
+
+    selected.set(index,{
+      name:checkbox.dataset.name,
+      price:Number(checkbox.dataset.price),
+      duration:checkbox.dataset.duration
     });
 
-    container.addEventListener("change",e=>{
-      if(!e.target.matches("input")) return;
-      const i=Number(e.target.dataset.i), [name,price]=services[i];
-      e.target.checked ? selected.set(i,{name,price}) : selected.delete(i);
-      update();
-    });
+  }else{
 
-    function update(){
-      let total=0;
-      const names=[];
-      selected.forEach(s=>{total+=s.price;names.push(s.name)});
-      document.getElementById("count").textContent=selected.size;
-      document.getElementById("total").textContent="₹"+total.toLocaleString("en-IN");
-      document.getElementById("selected").textContent=names.length?names.join(" • "):"No services selected.";
-    }
+    selected.delete(index);
 
-    function sendWhatsApp(){
-      if(!selected.size){alert("Please select at least one service.");return;}
-      const name=document.getElementById("name").value.trim();
-      const phone=document.getElementById("phone").value.trim();
-      const date=document.getElementById("date").value;
-      const time=document.getElementById("time").value;
-      const address=document.getElementById("address").value.trim();
-      const note=document.getElementById("note").value.trim();
-      if(!name||!phone||!date||!time||!address){alert("Please fill Name, Phone, Date, Time and Address.");return;}
-      let total=0, list=[];
-      selected.forEach(s=>{total+=s.price;list.push(`${s.name} - ₹${s.price}`)});
-      const msg=`Hello HerGlowAtHome,%0A%0AI would like to book:%0A${list.join("%0A")}%0A%0ATotal: ₹${total}%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADate: ${date}%0ATime: ${time}%0AAddress: ${encodeURIComponent(address)}%0ANote: ${encodeURIComponent(note||"None")}`;
-      // Replace 91XXXXXXXXXX with the final HerGlowAtHome WhatsApp number.
-      window.open("https://wa.me/91XXXXXXXXXX?text="+msg,"_blank");
-    }
-  </script>
+  }
+
+  updateSummary();
+
+});
+
+
+function updateSummary(){
+
+  let total=0;
+  const names=[];
+
+  selected.forEach(service=>{
+
+    total+=service.price;
+
+    names.push(
+      `${service.name} - ₹${service.price.toLocaleString("en-IN")}`
+    );
+
+  });
+
+  document.getElementById("count").textContent=selected.size;
+
+  document.getElementById("total").textContent=
+    "₹"+total.toLocaleString("en-IN");
+
+  document.getElementById("selected").innerHTML=
+    names.length
+      ? names.join("<br>")
+      : "No services selected.";
+
+}
+
+
+/* =========================================================
+   WHATSAPP BOOKING
+   ========================================================= */
+
+function sendWhatsApp(){
+
+  if(!selected.size){
+
+    alert("Please select at least one service.");
+
+    return;
+  }
+
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const date=document.getElementById("date").value;
+  const time=document.getElementById("time").value;
+  const address=document.getElementById("address").value.trim();
+  const note=document.getElementById("note").value.trim();
+
+  if(!name || !phone || !date || !time || !address){
+
+    alert(
+      "Please fill Name, Phone, Preferred Date, Preferred Time and Service Address."
+    );
+
+    return;
+  }
+
+  let total=0;
+
+  let list="";
+
+  selected.forEach(service=>{
+
+    total+=service.price;
+
+    list+=
+      `• ${service.name} - ₹${service.price.toLocaleString("en-IN")} (${service.duration})\n`;
+
+  });
+
+
+  const message=
+
+`Hello HerGlowAtHome,
+
+I would like to book the following services:
+
+${list}
+Estimated Total: ₹${total.toLocaleString("en-IN")}
+
+Name: ${name}
+Phone: ${phone}
+Preferred Date: ${date}
+Preferred Time: ${time}
+Service Address: ${address}
+Note: ${note || "None"}
+
+Please confirm availability and booking.
+
+Thank you.`;
+
+
+  const whatsappNumber="917087128778";
+
+  const url=
+    "https://wa.me/"+whatsappNumber+
+    "?text="+encodeURIComponent(message);
+
+  window.open(url,"_blank");
+
+}
+
+</script>
+
 </body>
 </html>
