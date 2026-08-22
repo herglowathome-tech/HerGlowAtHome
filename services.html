@@ -1,17 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HerGlowAtHome - Premium beauty, skincare, waxing, hair and wellness services at your doorstep.">
+
+<meta name="description"
+content="HerGlowAtHome - Beauty, skincare, waxing, hair and wellness services at your doorstep.">
+
 <title>HerGlowAtHome | Services & Booking</title>
 
 <style>
 :root{
   --cream:#fffaf2;
   --gold:#b58a45;
-  --gold2:#d5b477;
   --dark:#2b241d;
   --muted:#75695c;
   --white:#fff;
@@ -20,6 +21,7 @@
 }
 
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
 
 body{
@@ -30,8 +32,10 @@ body{
   line-height:1.5;
 }
 
-button,input,textarea{font:inherit}
-button{cursor:pointer}
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
 .nav{
   position:sticky;
@@ -62,8 +66,6 @@ button{cursor:pointer}
   margin-left:18px;
   font-size:14px;
   font-weight:600;
-  text-decoration:none;
-  color:inherit;
 }
 
 .hero{
@@ -98,7 +100,7 @@ h1{
 
 .area{
   margin:22px auto 0;
-  max-width:700px;
+  max-width:650px;
   padding:13px 18px;
   background:white;
   border:1px solid var(--line);
@@ -108,7 +110,7 @@ h1{
 }
 
 
-/* CATEGORY */
+/* CATEGORY FOLDERS */
 
 main{
   max-width:950px;
@@ -122,7 +124,7 @@ main{
   border-radius:18px;
   overflow:hidden;
   background:white;
-  box-shadow:0 5px 18px rgba(70,45,20,.05);
+  box-shadow:0 5px 18px rgba(70,45,20,.04);
 }
 
 .category-header{
@@ -134,6 +136,7 @@ main{
   align-items:center;
   justify-content:space-between;
   text-align:left;
+  cursor:pointer;
   color:var(--dark);
 }
 
@@ -148,14 +151,7 @@ main{
 }
 
 .folder-icon{
-  width:45px;
-  height:45px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff7e9;
-  border-radius:12px;
-  font-size:23px;
+  font-size:28px;
 }
 
 .category-name{
@@ -171,7 +167,7 @@ main{
 
 .arrow{
   color:var(--gold);
-  font-size:22px;
+  font-size:20px;
   transition:.25s;
 }
 
@@ -200,12 +196,6 @@ main{
   border:1px solid var(--line);
   border-radius:14px;
   padding:17px;
-  transition:.2s;
-}
-
-.service:hover{
-  border-color:var(--gold2);
-  transform:translateY(-1px);
 }
 
 .service h3{
@@ -236,6 +226,7 @@ main{
   margin-top:12px;
   font-size:13px;
   font-weight:700;
+  cursor:pointer;
 }
 
 input[type="checkbox"]{
@@ -269,7 +260,7 @@ input[type="checkbox"]{
   margin:9px 0;
   color:var(--muted);
   font-size:13px;
-  max-height:110px;
+  max-height:90px;
   overflow:auto;
 }
 
@@ -280,7 +271,7 @@ input[type="checkbox"]{
 }
 
 
-/* FORM */
+/* BOOKING FORM */
 
 .form{
   background:white;
@@ -316,23 +307,26 @@ label{
   font-weight:700;
 }
 
-input,textarea{
+input,
+textarea{
   width:100%;
   margin-top:6px;
   padding:12px;
   border:1px solid #dbcdbb;
   border-radius:10px;
+  font:inherit;
   background:#fffdfa;
-}
-
-input:focus,textarea:focus{
-  outline:none;
-  border-color:var(--gold);
 }
 
 textarea{
   min-height:90px;
   resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--gold);
 }
 
 .form-button{
@@ -346,6 +340,7 @@ textarea{
   border-radius:30px;
   border:1px solid var(--gold);
   font-weight:700;
+  cursor:pointer;
   background:white;
 }
 
@@ -367,6 +362,9 @@ textarea{
   padding:28px 20px;
   color:var(--muted);
 }
+
+
+/* MOBILE */
 
 @media(max-width:650px){
 
@@ -398,14 +396,21 @@ textarea{
   .category-name{
     font-size:16px;
   }
+
+  .folder-icon{
+    font-size:25px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+
 <nav class="nav">
+
   <div class="nav-inner">
+
     <a class="brand" href="index.html">
       Her<span>Glow</span>AtHome
     </a>
@@ -414,7 +419,9 @@ textarea{
       <a href="index.html">Home</a>
       <a href="services.html">Services & Booking</a>
     </div>
+
   </div>
+
 </nav>
 
 
@@ -428,7 +435,7 @@ textarea{
 
   <p>
     Choose a category to explore services and prices.
-    Select services from multiple categories and send your booking request directly on WhatsApp.
+    You can select services from multiple categories.
   </p>
 
   <div class="area">
@@ -440,109 +447,115 @@ textarea{
 
 <main>
 
-<div id="categories"></div>
+  <div id="categories"></div>
 
 
-<div class="summary">
+  <div class="summary">
 
-  <div class="summary-row">
-    <strong>Selected Services</strong>
-    <strong id="count">0</strong>
-  </div>
-
-  <div id="selected" class="selected-list">
-    No services selected.
-  </div>
-
-  <div class="summary-row">
-    <strong>Total</strong>
-    <span id="total" class="total">₹0</span>
-  </div>
-
-</div>
-
-
-<div class="form">
-
-  <h2>Booking Request</h2>
-
-  <p class="form-sub">
-    Fill in your details and send your selected services directly to HerGlowAtHome on WhatsApp.
-  </p>
-
-  <div class="fields">
-
-    <div>
-      <label>
-        Name
-        <input id="name" placeholder="Your name">
-      </label>
+    <div class="summary-row">
+      <strong>Selected Services</strong>
+      <strong id="count">0</strong>
     </div>
 
-    <div>
-      <label>
-        Phone
-        <input id="phone" type="tel" placeholder="Your phone number">
-      </label>
+    <div id="selected" class="selected-list">
+      No services selected.
     </div>
 
-    <div>
-      <label>
-        Preferred Date
-        <input id="date" type="date">
-      </label>
-    </div>
-
-    <div>
-      <label>
-        Preferred Time
-        <input id="time" type="time">
-      </label>
-    </div>
-
-    <div class="full">
-      <label>
-        Service Address
-        <input id="address" placeholder="Complete service address">
-      </label>
-    </div>
-
-    <div class="full">
-      <label>
-        Note (Optional)
-        <textarea id="note" placeholder="Any special request?"></textarea>
-      </label>
+    <div class="summary-row">
+      <strong>Total</strong>
+      <span id="total" class="total">₹0</span>
     </div>
 
   </div>
 
-  <div class="form-button">
-    <button class="btn primary" onclick="sendWhatsApp()">
-      Send Booking on WhatsApp
-    </button>
-  </div>
 
-  <div class="note">
-    Booking will be confirmed after availability is checked.
-  </div>
+  <div class="form">
 
-</div>
+    <h2>Booking Request</h2>
+
+    <p class="form-sub">
+      Fill in your details and send your selected services directly
+      to HerGlowAtHome on WhatsApp.
+    </p>
+
+    <div class="fields">
+
+      <div>
+        <label>
+          Name
+          <input id="name" placeholder="Your name">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Phone
+          <input id="phone" type="tel" placeholder="Your phone number">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Preferred Date
+          <input id="date" type="date">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Preferred Time
+          <input id="time" type="time">
+        </label>
+      </div>
+
+      <div class="full">
+        <label>
+          Service Address
+          <input id="address" placeholder="Complete service address">
+        </label>
+      </div>
+
+      <div class="full">
+        <label>
+          Note (Optional)
+          <textarea id="note" placeholder="Any special request?"></textarea>
+        </label>
+      </div>
+
+    </div>
+
+    <div class="form-button">
+
+      <button class="btn primary" onclick="sendWhatsApp()">
+        Send Booking on WhatsApp
+      </button>
+
+    </div>
+
+    <div class="note">
+      Booking will be confirmed after availability is checked.
+    </div>
+
+  </div>
 
 </main>
 
 
 <footer class="footer">
+
   <strong>HerGlowAtHome</strong><br>
   You Glow, We Go.<br>
   Chandigarh • Mohali • Panchkula • Kharar
+
 </footer>
 
 
 <script>
 
-/* =========================
-   ALL SERVICES
-========================= */
+
+/* =========================================================
+   ALL HERGLOWAT HOME SERVICES
+   ========================================================= */
 
 const categories = [
 
@@ -770,32 +783,46 @@ services:[
 ];
 
 
-/* =========================
-   CREATE CATEGORIES
-========================= */
+/* =========================================================
+   CREATE CATEGORY FOLDERS
+   ========================================================= */
 
 const container=document.getElementById("categories");
 const selected=new Map();
 
+let serviceIndex=0;
+
 categories.forEach((category,categoryIndex)=>{
 
-  const box=document.createElement("div");
-  box.className="category";
+  const categoryBox=document.createElement("div");
+  categoryBox.className="category";
 
   const header=document.createElement("button");
   header.className="category-header";
   header.type="button";
 
   header.innerHTML=`
+
     <div class="category-left">
+
       <div class="folder-icon">📁</div>
+
       <div>
-        <div class="category-name">${category.name}</div>
-        <div class="category-count">${category.services.length} Services</div>
+        <div class="category-name">
+          ${category.name}
+        </div>
+
+        <div class="category-count">
+          ${category.services.length} Services
+        </div>
       </div>
+
     </div>
+
     <div class="arrow">⌄</div>
+
   `;
+
 
   const content=document.createElement("div");
   content.className="category-content";
@@ -803,16 +830,17 @@ categories.forEach((category,categoryIndex)=>{
   const grid=document.createElement("div");
   grid.className="services";
 
-  category.services.forEach((service,serviceIndex)=>{
+
+  category.services.forEach(service=>{
 
     const [name,price,duration]=service;
+    const index=serviceIndex++;
 
     const card=document.createElement("div");
     card.className="service";
 
-    const id=`c${categoryIndex}s${serviceIndex}`;
-
     card.innerHTML=`
+
       <h3>${name}</h3>
 
       <div class="price">
@@ -824,37 +852,46 @@ categories.forEach((category,categoryIndex)=>{
       </span>
 
       <label class="select">
+
         <input
           type="checkbox"
-          id="${id}"
-          data-id="${id}"
+          data-index="${index}"
           data-name="${name}"
           data-price="${price}"
           data-duration="${duration}"
         >
+
         Select Service
+
       </label>
+
     `;
 
     grid.appendChild(card);
+
   });
 
-  content.appendChild(grid);
-  box.appendChild(header);
-  box.appendChild(content);
-  container.appendChild(box);
 
-  /* ONLY ONE FOLDER OPEN AT A TIME */
+  content.appendChild(grid);
+
+  categoryBox.appendChild(header);
+  categoryBox.appendChild(content);
+
+  container.appendChild(categoryBox);
+
+
+  /* ONE CATEGORY OPEN AT A TIME */
 
   header.addEventListener("click",()=>{
 
-    const wasOpen=box.classList.contains("open");
+    const wasOpen=categoryBox.classList.contains("open");
 
-    document.querySelectorAll(".category")
-      .forEach(item=>item.classList.remove("open"));
+    document
+      .querySelectorAll(".category")
+      .forEach(box=>box.classList.remove("open"));
 
     if(!wasOpen){
-      box.classList.add("open");
+      categoryBox.classList.add("open");
     }
 
   });
@@ -862,26 +899,29 @@ categories.forEach((category,categoryIndex)=>{
 });
 
 
-/* =========================
+/* =========================================================
    SERVICE SELECTION
-========================= */
+   ========================================================= */
 
-container.addEventListener("change",e=>{
+container.addEventListener("change",function(e){
 
   if(!e.target.matches('input[type="checkbox"]')) return;
 
-  const cb=e.target;
+  const checkbox=e.target;
+  const index=checkbox.dataset.index;
 
-  const data={
-    name:cb.dataset.name,
-    price:Number(cb.dataset.price),
-    duration:cb.dataset.duration
-  };
+  if(checkbox.checked){
 
-  if(cb.checked){
-    selected.set(cb.dataset.id,data);
+    selected.set(index,{
+      name:checkbox.dataset.name,
+      price:Number(checkbox.dataset.price),
+      duration:checkbox.dataset.duration
+    });
+
   }else{
-    selected.delete(cb.dataset.id);
+
+    selected.delete(index);
+
   }
 
   updateSummary();
@@ -892,14 +932,14 @@ container.addEventListener("change",e=>{
 function updateSummary(){
 
   let total=0;
-  const list=[];
+  const names=[];
 
   selected.forEach(service=>{
 
     total+=service.price;
 
-    list.push(
-      `• ${service.name} - ₹${service.price.toLocaleString("en-IN")} (${service.duration})`
+    names.push(
+      `${service.name} - ₹${service.price.toLocaleString("en-IN")}`
     );
 
   });
@@ -910,21 +950,23 @@ function updateSummary(){
     "₹"+total.toLocaleString("en-IN");
 
   document.getElementById("selected").innerHTML=
-    list.length
-      ? list.join("<br>")
+    names.length
+      ? names.join("<br>")
       : "No services selected.";
 
 }
 
 
-/* =========================
+/* =========================================================
    WHATSAPP BOOKING
-========================= */
+   ========================================================= */
 
 function sendWhatsApp(){
 
   if(!selected.size){
+
     alert("Please select at least one service.");
+
     return;
   }
 
@@ -956,7 +998,9 @@ function sendWhatsApp(){
 
   });
 
+
   const message=
+
 `Hello HerGlowAtHome,
 
 I would like to book the following services:
@@ -974,6 +1018,7 @@ Note: ${note || "None"}
 Please confirm availability and booking.
 
 Thank you.`;
+
 
   const whatsappNumber="917087128778";
 
