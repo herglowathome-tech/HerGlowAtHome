@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HerGlowAtHome premium beauty services and online booking.">
+
+<meta name="description"
+content="HerGlowAtHome - Beauty, skincare, waxing, hair and wellness services at your doorstep.">
+
 <title>HerGlowAtHome | Services & Booking</title>
 
 <style>
 :root{
-  --cream:#fcf7ef;
-  --cream2:#fffdf9;
+  --cream:#fffaf2;
   --gold:#b58a45;
-  --gold2:#d1aa68;
+  --gold-light:#f8eedf;
   --dark:#2b241d;
-  --muted:#786d61;
-  --line:#eadcc7;
+  --muted:#75695c;
   --white:#fff;
-  --shadow:0 12px 35px rgba(75,52,25,.08);
+  --line:#eadcc7;
+  --soft:#fffdf9;
 }
 
 *{box-sizing:border-box}
@@ -26,155 +28,122 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at top right,rgba(181,138,69,.08),transparent 30%),
-    var(--cream);
+  background:var(--cream);
   color:var(--dark);
   line-height:1.5;
 }
 
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
 a{text-decoration:none;color:inherit}
-
-/* NAV */
 
 .nav{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(252,247,239,.94);
-  backdrop-filter:blur(14px);
+  background:rgba(255,250,242,.97);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
-  max-width:1150px;
+  max-width:1100px;
   margin:auto;
-  padding:15px 20px;
+  padding:14px 20px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
 .brand{
   font-size:22px;
-  font-weight:800;
-  letter-spacing:-.4px;
+  font-weight:700;
 }
 
 .brand span{color:var(--gold)}
 
-.nav-links{
-  display:flex;
-  gap:24px;
-}
-
-.nav-links a{
+.nav a{
+  margin-left:18px;
   font-size:14px;
-  font-weight:700;
-  color:#5f554b;
+  font-weight:600;
 }
-
-.nav-links a:hover{color:var(--gold)}
-
-/* HERO */
 
 .hero{
-  max-width:950px;
+  max-width:900px;
   margin:auto;
+  padding:55px 20px 30px;
   text-align:center;
-  padding:68px 20px 38px;
 }
 
 .eyebrow{
-  display:inline-block;
   color:var(--gold);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2.4px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
   text-transform:uppercase;
-  margin-bottom:10px;
 }
 
-.hero h1{
+h1,h2{
   font-family:Georgia,serif;
-  font-size:clamp(40px,7vw,62px);
-  line-height:1.05;
-  margin:0;
-  font-weight:500;
 }
 
-.hero h1 span{color:var(--gold)}
+h1{
+  font-size:clamp(38px,7vw,58px);
+  margin:10px 0;
+}
 
 .hero p{
-  max-width:650px;
-  margin:16px auto 0;
   color:var(--muted);
-  font-size:16px;
+  max-width:700px;
+  margin:auto;
 }
 
-.area-pill{
-  display:inline-flex;
-  margin-top:22px;
-  padding:10px 18px;
+.area{
+  margin:22px auto 0;
+  max-width:650px;
+  padding:13px 18px;
+  background:white;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.72);
-  border-radius:30px;
+  border-radius:15px;
   color:var(--gold);
-  font-size:13px;
   font-weight:700;
-  box-shadow:0 5px 20px rgba(75,52,25,.04);
 }
-
-/* MAIN */
 
 main{
-  max-width:1050px;
+  max-width:950px;
   margin:auto;
-  padding:10px 20px 70px;
-}
-
-.section-title{
-  text-align:center;
-  font-family:Georgia,serif;
-  font-size:30px;
-  font-weight:500;
-  margin:15px 0 8px;
-}
-
-.section-sub{
-  text-align:center;
-  color:var(--muted);
-  margin:0 auto 28px;
+  padding:10px 20px 50px;
 }
 
 /* CATEGORY */
 
 .category{
-  background:rgba(255,255,255,.82);
+  margin:12px 0;
   border:1px solid var(--line);
-  border-radius:20px;
-  margin:13px 0;
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:var(--shadow);
+  background:white;
+  box-shadow:0 6px 22px rgba(70,45,20,.06);
   transition:.25s;
 }
 
-.category:hover{
-  border-color:#dcc29a;
+.category.open{
+  box-shadow:0 10px 28px rgba(70,45,20,.10);
 }
 
 .category-header{
   width:100%;
   border:0;
-  background:transparent;
-  color:var(--dark);
-  padding:19px 21px;
+  background:white;
+  padding:20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   text-align:left;
+  cursor:pointer;
+  color:var(--dark);
+}
+
+.category-header:hover{
+  background:#fffaf2;
 }
 
 .category-left{
@@ -183,21 +152,20 @@ main{
   gap:14px;
 }
 
-.folder{
-  width:45px;
-  height:45px;
-  border-radius:14px;
+.folder-icon{
+  width:44px;
+  height:44px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(145deg,#fff8ea,#f5e6ce);
-  border:1px solid #ead4b1;
-  font-size:22px;
+  border-radius:13px;
+  background:var(--gold-light);
+  font-size:23px;
 }
 
 .category-name{
-  font-size:16px;
-  font-weight:800;
+  font-size:18px;
+  font-weight:700;
 }
 
 .category-count{
@@ -207,64 +175,47 @@ main{
 }
 
 .arrow{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  border:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:center;
   color:var(--gold);
+  font-size:22px;
   transition:.25s;
 }
 
 .category.open .arrow{
   transform:rotate(180deg);
-  background:#fff7e9;
 }
 
 .category-content{
   display:none;
-  padding:0 16px 17px;
-  background:linear-gradient(180deg,#fffdf9,#fffaf3);
+  padding:0 15px 15px;
+  background:var(--soft);
 }
 
 .category.open .category-content{
   display:block;
 }
 
-/* SERVICES */
-
 .services{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  gap:13px;
 }
 
 .service{
-  position:relative;
   background:white;
   border:1px solid var(--line);
-  border-radius:15px;
+  border-radius:14px;
   padding:17px;
   transition:.2s;
 }
 
 .service:hover{
-  transform:translateY(-2px);
-  box-shadow:0 7px 20px rgba(75,52,25,.07);
-}
-
-.service.selected{
-  border-color:var(--gold);
-  background:#fffaf0;
+  border-color:#d5b77f;
+  transform:translateY(-1px);
 }
 
 .service h3{
-  font-size:14px;
-  line-height:1.4;
-  margin:0 0 8px;
-  padding-right:5px;
+  font-size:15px;
+  margin:0 0 7px;
 }
 
 .price{
@@ -276,21 +227,21 @@ main{
 .duration{
   display:inline-block;
   margin-top:4px;
-  padding:4px 9px;
+  color:var(--muted);
+  font-size:12px;
+  background:#fff8eb;
+  padding:4px 8px;
   border-radius:20px;
-  background:#faf1e2;
-  color:#786957;
-  font-size:11px;
 }
 
 .select{
   display:flex;
   align-items:center;
   gap:8px;
-  margin-top:13px;
-  font-size:12px;
-  font-weight:800;
-  color:#5c5147;
+  margin-top:12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
 }
 
 input[type="checkbox"]{
@@ -303,113 +254,91 @@ input[type="checkbox"]{
 
 .summary{
   position:sticky;
-  bottom:12px;
+  bottom:10px;
   z-index:90;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  border:1px solid #d8bc8d;
-  border-radius:20px;
-  padding:16px 19px;
-  margin:25px 0 38px;
-  box-shadow:0 15px 40px rgba(55,38,20,.16);
+  background:white;
+  border:1px solid var(--gold);
+  border-radius:18px;
+  padding:17px 20px;
+  margin:25px 0;
+  box-shadow:0 10px 30px rgba(70,45,20,.15);
 }
 
-.summary-top{
+.summary-row{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-}
-
-.summary-title{
-  font-weight:800;
-}
-
-.count{
-  background:#f6ead8;
-  color:var(--gold);
-  border-radius:20px;
-  padding:4px 10px;
-  font-size:12px;
+  gap:15px;
 }
 
 .selected-list{
-  color:var(--muted);
-  font-size:12px;
   margin:9px 0;
-  max-height:95px;
+  color:var(--muted);
+  font-size:13px;
+  max-height:100px;
   overflow:auto;
-}
-
-.total-row{
-  border-top:1px solid var(--line);
-  padding-top:9px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
 }
 
 .total{
   color:var(--gold);
-  font-size:25px;
-  font-weight:900;
+  font-size:26px;
+  font-weight:800;
 }
 
 /* BOOKING */
 
-.booking{
+.form{
   background:white;
   border:1px solid var(--line);
-  border-radius:24px;
-  padding:30px;
-  box-shadow:var(--shadow);
+  border-radius:20px;
+  padding:25px;
+  margin:35px 0 20px;
+  box-shadow:0 6px 22px rgba(70,45,20,.05);
 }
 
-.booking h2{
-  font-family:Georgia,serif;
+.form h2{
   text-align:center;
-  font-size:30px;
-  font-weight:500;
-  margin:0;
+  margin-top:0;
 }
 
-.booking-intro{
+.form-sub{
   text-align:center;
   color:var(--muted);
-  font-size:14px;
-  margin:8px auto 25px;
+  margin-bottom:24px;
 }
 
 .fields{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:14px;
 }
 
-.full{grid-column:1/-1}
+.full{
+  grid-column:1/-1;
+}
 
 label{
-  display:block;
-  font-size:12px;
-  font-weight:800;
-  color:#4d443c;
+  font-size:13px;
+  font-weight:700;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
   width:100%;
   margin-top:6px;
-  padding:12px 13px;
-  border:1px solid #dccfbe;
-  border-radius:11px;
+  padding:12px;
+  border:1px solid #dbcdbb;
+  border-radius:10px;
+  font:inherit;
   background:#fffdfa;
   color:var(--dark);
-  outline:none;
 }
 
 input:focus,
 textarea:focus,
 select:focus{
+  outline:none;
   border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(181,138,69,.08);
 }
 
 textarea{
@@ -419,81 +348,62 @@ textarea{
 
 /* TIME */
 
-.time-picker{
+.time-box{
   display:grid;
-  grid-template-columns:1fr 1fr 1.2fr;
-  gap:7px;
-  align-items:center;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
 }
 
-.time-picker select{
-  margin-top:6px;
-  text-align:center;
+.time-box select{
+  cursor:pointer;
 }
 
-/* BUTTON */
-
-.booking-button{
+.form-button{
   text-align:center;
-  margin-top:22px;
+  margin-top:20px;
 }
 
 .btn{
-  border:1px solid var(--gold);
+  display:inline-block;
+  padding:13px 22px;
   border-radius:30px;
-  padding:13px 25px;
+  border:1px solid var(--gold);
+  font-weight:700;
+  cursor:pointer;
   background:white;
-  color:var(--dark);
-  font-weight:800;
+  font:inherit;
 }
 
 .btn.primary{
-  background:linear-gradient(135deg,#b58a45,#c9a15d);
+  background:var(--gold);
   color:white;
-  box-shadow:0 8px 20px rgba(181,138,69,.25);
 }
 
-.btn.primary:hover{
-  transform:translateY(-1px);
-}
-
-.booking-note{
+.note{
   text-align:center;
   color:var(--muted);
-  font-size:11px;
-  margin-top:11px;
+  font-size:12px;
+  margin-top:12px;
 }
-
-/* FOOTER */
 
 .footer{
-  border-top:1px solid var(--line);
   text-align:center;
-  padding:30px 20px;
+  border-top:1px solid var(--line);
+  padding:28px 20px;
   color:var(--muted);
-  font-size:13px;
 }
 
 /* MOBILE */
 
-@media(max-width:680px){
+@media(max-width:650px){
 
   .nav-inner{
     flex-direction:column;
-    gap:9px;
+    gap:8px;
   }
 
-  .nav-links{
-    gap:16px;
-  }
-
-  .hero{
-    padding-top:48px;
-  }
-
-  main{
-    padding-left:14px;
-    padding-right:14px;
+  .nav a{
+    margin:0 7px;
   }
 
   .services{
@@ -508,21 +418,22 @@ textarea{
     grid-column:auto;
   }
 
-  .booking{
-    padding:22px 17px;
-  }
-
   .category-header{
-    padding:16px;
+    padding:17px 15px;
   }
 
   .category-name{
-    font-size:15px;
+    font-size:16px;
   }
 
-  .folder{
-    width:42px;
-    height:42px;
+  .folder-icon{
+    width:40px;
+    height:40px;
+    font-size:21px;
+  }
+
+  .time-box{
+    grid-template-columns:1fr 1fr 1fr;
   }
 }
 </style>
@@ -532,78 +443,64 @@ textarea{
 
 <nav class="nav">
   <div class="nav-inner">
-
     <a class="brand" href="index.html">
       Her<span>Glow</span>AtHome
     </a>
 
-    <div class="nav-links">
+    <div>
       <a href="index.html">Home</a>
       <a href="services.html">Services & Booking</a>
     </div>
-
   </div>
 </nav>
 
-
 <header class="hero">
 
-  <div class="eyebrow">Premium Beauty At Your Doorstep</div>
+  <div class="eyebrow">
+    Premium Beauty Services At Your Doorstep
+  </div>
 
-  <h1>Services <span>&</span> Booking</h1>
+  <h1>Services & Booking</h1>
 
   <p>
-    Explore our services by category, select what you need,
-    and send your booking request directly to HerGlowAtHome.
+    Choose a category to explore services and prices.
+    Select services from multiple categories and send your booking request directly on WhatsApp.
   </p>
 
-  <div class="area-pill">
-    ✦ Chandigarh &nbsp;•&nbsp; Mohali &nbsp;•&nbsp; Panchkula &nbsp;•&nbsp; Kharar
+  <div class="area">
+    Chandigarh • Mohali • Panchkula • Kharar
   </div>
 
 </header>
 
-
 <main>
-
-  <h2 class="section-title">Explore Our Services</h2>
-
-  <p class="section-sub">
-    Tap a category to view its services and prices.
-  </p>
 
   <div id="categories"></div>
 
-
-  <!-- SUMMARY -->
-
   <div class="summary">
 
-    <div class="summary-top">
-      <div class="summary-title">Selected Services</div>
-      <div class="count" id="count">0</div>
+    <div class="summary-row">
+      <strong>Selected Services</strong>
+      <strong id="count">0</strong>
     </div>
 
-    <div class="selected-list" id="selected">
+    <div id="selected" class="selected-list">
       No services selected.
     </div>
 
-    <div class="total-row">
-      <strong>Estimated Total</strong>
-      <span class="total" id="total">₹0</span>
+    <div class="summary-row">
+      <strong>Total</strong>
+      <span id="total" class="total">₹0</span>
     </div>
 
   </div>
 
+  <div class="form">
 
-  <!-- BOOKING FORM -->
+    <h2>Booking Request</h2>
 
-  <div class="booking">
-
-    <h2>Book Your Appointment</h2>
-
-    <p class="booking-intro">
-      Fill in your details and send your selected services to WhatsApp.
+    <p class="form-sub">
+      Fill in your details and send your selected services directly to HerGlowAtHome on WhatsApp.
     </p>
 
     <div class="fields">
@@ -622,7 +519,6 @@ textarea{
         </label>
       </div>
 
-
       <div>
         <label>
           Preferred Date
@@ -630,51 +526,48 @@ textarea{
         </label>
       </div>
 
-
-      <!-- NUMERICAL TIME + AM/PM -->
-
       <div>
         <label>
           Preferred Time
 
-          <div class="time-picker">
+          <div class="time-box">
 
             <select id="hour">
               <option value="">Hour</option>
-              <option>01</option>
-              <option>02</option>
-              <option>03</option>
-              <option>04</option>
-              <option>05</option>
-              <option>06</option>
-              <option>07</option>
-              <option>08</option>
-              <option>09</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
             </select>
 
             <select id="minute">
-              <option value="">Min</option>
-              <option>00</option>
-              <option>05</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>30</option>
-              <option>35</option>
-              <option>40</option>
-              <option>45</option>
-              <option>50</option>
-              <option>55</option>
+              <option value="">Minute</option>
+              <option value="00">00</option>
+              <option value="05">05</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
             </select>
 
             <select id="ampm">
-              <option value="">AM / PM</option>
-              <option>AM</option>
-              <option>PM</option>
+              <option value="">AM/PM</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
             </select>
 
           </div>
@@ -682,69 +575,48 @@ textarea{
         </label>
       </div>
 
-
       <div class="full">
-
         <label>
           Service Address
-          <input
-            id="address"
-            placeholder="Your complete service address">
+          <input id="address" placeholder="Complete service address">
         </label>
-
       </div>
 
-
       <div class="full">
-
         <label>
           Note (Optional)
-
-          <textarea
-            id="note"
-            placeholder="Any special request?"></textarea>
-
+          <textarea id="note" placeholder="Any special request?"></textarea>
         </label>
-
       </div>
 
     </div>
 
+    <div class="form-button">
 
-    <div class="booking-button">
-
-      <button
-        class="btn primary"
-        onclick="sendWhatsApp()">
-
+      <button class="btn primary" onclick="sendWhatsApp()">
         Send Booking on WhatsApp
-
       </button>
 
     </div>
 
-    <div class="booking-note">
-      Your booking will be confirmed after availability is checked.
+    <div class="note">
+      Booking will be confirmed after availability is checked.
     </div>
 
   </div>
 
 </main>
 
-
 <footer class="footer">
-
   <strong>HerGlowAtHome</strong><br>
-  You Glow, We Go.<br><br>
+  You Glow, We Go.<br>
   Chandigarh • Mohali • Panchkula • Kharar
-
 </footer>
-
 
 <script>
 
 /* =========================================================
-   HERGLOW SERVICES
+   HERGLOWAT HOME SERVICES
    ========================================================= */
 
 const categories = [
@@ -974,7 +846,7 @@ services:[
 
 
 /* =========================================================
-   BUILD CATEGORIES
+   CREATE CATEGORY FOLDERS
    ========================================================= */
 
 const container=document.getElementById("categories");
@@ -982,10 +854,10 @@ const selected=new Map();
 
 let serviceIndex=0;
 
-categories.forEach((category)=>{
+categories.forEach(category=>{
 
-  const box=document.createElement("div");
-  box.className="category";
+  const categoryBox=document.createElement("div");
+  categoryBox.className="category";
 
   const header=document.createElement("button");
   header.className="category-header";
@@ -993,7 +865,8 @@ categories.forEach((category)=>{
 
   header.innerHTML=`
     <div class="category-left">
-      <div class="folder">✦</div>
+      <div class="folder-icon">📁</div>
+
       <div>
         <div class="category-name">${category.name}</div>
         <div class="category-count">
@@ -1036,7 +909,8 @@ categories.forEach((category)=>{
           data-index="${index}"
           data-name="${name}"
           data-price="${price}"
-          data-duration="${duration}">
+          data-duration="${duration}"
+        >
         Select Service
       </label>
     `;
@@ -1045,23 +919,107 @@ categories.forEach((category)=>{
   });
 
   content.appendChild(grid);
-  box.appendChild(header);
-  box.appendChild(content);
-  container.appendChild(box);
 
+  categoryBox.appendChild(header);
+  categoryBox.appendChild(content);
 
-  /* ONLY ONE CATEGORY OPEN */
+  container.appendChild(categoryBox);
+
+  /* ONLY ONE CATEGORY OPEN AT A TIME */
 
   header.addEventListener("click",()=>{
 
-    const alreadyOpen=box.classList.contains("open");
+    const wasOpen=categoryBox.classList.contains("open");
 
     document
       .querySelectorAll(".category")
-      .forEach(item=>item.classList.remove("open"));
+      .forEach(box=>box.classList.remove("open"));
 
-    if(!alreadyOpen){
-      box.classList.add("open");
+    if(!wasOpen){
+      categoryBox.classList.add("open");
     }
 
+  });
+
+});
+
+
+/* =========================================================
+   SERVICE SELECTION
+   ========================================================= */
+
+container.addEventListener("change",function(e){
+
+  if(!e.target.matches('input[type="checkbox"]')) return;
+
+  const checkbox=e.target;
+  const index=checkbox.dataset.index;
+
+  if(checkbox.checked){
+
+    selected.set(index,{
+      name:checkbox.dataset.name,
+      price:Number(checkbox.dataset.price),
+      duration:checkbox.dataset.duration
+    });
+
+  }else{
+
+    selected.delete(index);
+
   }
+
+  updateSummary();
+
+});
+
+
+function updateSummary(){
+
+  let total=0;
+  const names=[];
+
+  selected.forEach(service=>{
+
+    total+=service.price;
+
+    names.push(
+      `${service.name} - ₹${service.price.toLocaleString("en-IN")}`
+    );
+
+  });
+
+  document.getElementById("count").textContent=selected.size;
+
+  document.getElementById("total").textContent=
+    "₹"+total.toLocaleString("en-IN");
+
+  document.getElementById("selected").innerHTML=
+    names.length
+      ? names.join("<br>")
+      : "No services selected.";
+
+}
+
+
+/* =========================================================
+   WHATSAPP BOOKING
+   ========================================================= */
+
+function sendWhatsApp(){
+
+  if(!selected.size){
+    alert("Please select at least one service.");
+    return;
+  }
+
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const date=document.getElementById("date").value;
+
+  const hour=document.getElementById("hour").value;
+  const minute=document.getElementById("minute").value;
+  const ampm=document.getElementById("ampm").value;
+
+  const address=document.getElementById("address").value.trim();
+  const note=document.getElemen
