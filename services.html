@@ -54,21 +54,889 @@
 
   <script>
     const categories = [
-      {name:"Facials & Skincare",mark:"FS",services:[["VLCC Fruit",599,"50 min"],["Lotus Gold Facial",799,"1 hr"],["Lotus Pearl Facial",749,"1 hr"],["FYC Brightening",899,"1 hr"],["O3+ Pigmentation & Anti Ageing",1299,"1 hr"],["O3+ De-Tan & Whitening",1099,"1 hr"],["O3+ Signature Glow Facial",1799,"1 hr 20 min"],["Raaga Oily / Dry Skin Facial",699,"50 min"],["VLCC Skin Tightening",599,"50 min"],["Aroma Gel Fruit",749,"1 hr 10 min"],["Pilgrim Gold Facial",799,"1 hr"],["Pilgrim De-Tan Facial",849,"1 hr"],["Aroma Gel Bridal Glow",949,"1 hr 10 min"],["O3+ Whitening",1099,"1 hr"],["O3+ De-Tan",1099,"1 hr"],["FYC Anti Ageing",1049,"1 hr"],["FYC Acne Pro Skin",1199,"1 hr"],["KANPEKI Ivory White",1199,"1 hr"],["O3+ Anti Ageing",1299,"1 hr"],["FYC Hydra Boost Facial",1999,"1 hr 20 min"],["FYC Korean Facial",2999,"1 hr 30 min"],["FYC De-Tan",899,"1 hr"]]},
-      {name:"Rica Wax",mark:"RW",services:[["Full Body",1499,"1 hr 30 min"],["Full Body + Bikini",1999,"2 hr 30 min"],["Full Arms + Full Legs + Bikini",1399,"1 hr 20 min"],["Full Arms with Underarms + Full Legs",749,"1 hr"],["Bikini + Butt",749,"1 hr"],["Rica Bikini",599,"40 min"],["Full Legs",449,"30 min"],["Full Arms with Underarms",399,"20 min"],["Full Back",399,"20 min"],["Stomach",349,"20 min"],["Half Legs",299,"30 min"],["Half Arms",299,"20 min"],["Half Back",249,"20 min"],["Butt Wax",499,"30 min"],["Underarms",149,"20 min"]]},
-      {name:"Honey Wax",mark:"HW",services:[["Full Body + Bikini",1349,"2 hr 20 min"],["Full Body",1249,"2 hr"],["Full Arms + Full Legs + Bikini",999,"1 hr 20 min"],["Bikini + Butt",599,"1 hr"],["Full Arms with Underarms + Full Legs",549,"1 hr"],["Honey Bikini",499,"40 min"],["Full Legs",349,"30 min"],["Full Back",299,"20 min"],["Full Arms with Underarms",299,"20 min"],["Butt Wax",249,"30 min"],["Stomach",249,"10 min"],["Half Arms",199,"20 min"],["Half Legs",199,"10 min"],["Underarms",99,"20 min"]]},
-      {name:"Cleanups",mark:"CL",services:[["VLCC Fruit Cleanup",399,"30 min"],["Lotus Pearl Cleanup",499,"30 min"],["Lotus Gold Cleanup",549,"30 min"],["O3+ Cleanup",788,"10 min"]]},
-      {name:"Manicure & Pedicure",mark:"MP",services:[["Basic Manicure & Pedicure",699,"1 hr"],["D-Tan Manicure & Pedicure",849,"1 hr 10 min"],["Basic Pedicure",449,"40 min"],["D-Tan Pedicure",549,"40 min"],["Basic Manicure",349,"30 min"],["D-Tan Manicure",449,"30 min"],["O3+ Manicure & Pedicure",999,"1 hr"],["Hydra Boost Mani-Pedi",1249,"1 hr 50 min"],["Korean Glass Mani-Pedi",1499,"1 hr 50 min"]]},
-      {name:"Brazilian & Intense Whitening",mark:"BI",services:[["Face Wax",349,"30 min"],["Side Locks",199,"20 min"],["Forehead",99,"10 min"],["Upper Lip",99,"10 min"],["Chin",99,"10 min"],["Underarms",199,"20 min"],["Bikini",699,"30 min"],["Bikini + Underarms",799,"40 min"],["Neck",299,"30 min"],["Elbows + Knees",299,"30 min"],["Elbows + Knees + Neck",299,"40 min"],["Intense Underarms",299,"30 min"],["Intense Neck",299,"30 min"],["Intense Underarms + Bikini",499,"40 min"],["Intense Elbows + Knees",299,"30 min"],["Bikini + Underarms + Neck + Elbows + Knees",899,"30 min"]]},
-      {name:"Keratin Hair Spa",mark:"KS",services:[["Shoulder Length",599,"40 min"],["Mid-Back Length",999,"1 hr"],["Waist Length",1349,"1 hr 10 min"],["Below-Waist Length",1499,"1 hr 30 min"]]},
-      {name:"Global Hair Color",mark:"GC",services:[["Shoulder Length",1099,"40 min"],["Mid-Back Length",1299,"50 min"],["Waist Length",1999,"1 hr 20 min"],["Below-Waist Length",2199,"1 hr 20 min"]]},
-      {name:"Keratin Treatment",mark:"KT",services:[["Shoulder Length",1999,"2 hr 30 min"],["Mid-Back Length",2499,"3 hr 30 min"],["Waist Length",2999,"4 hr 30 min"]]},
-      {name:"Root Touch-Up & Mehndi",mark:"RT",services:[["Root Touch-Up with Our Product",749,"20 min"],["Root Touch-Up with Client Product",199,"20 min"],["Mehndi Application with Client Product",249,"30 min"]]},
-      {name:"Spa & Body Massage",mark:"BM",services:[["Full Body Massage",799,"50 min"],["Scrub + Body Massage",1299,"1 hr 10 min"],["Head Massage",249,"20 min"],["Head & Shoulder Massage",399,"30 min"],["Head & Foot Massage",399,"40 min"],["Foot Massage",349,"30 min"],["Back Massage",249,"20 min"],["Arms Massage",249,"20 min"],["Herbal Massage",999,"1 hr"],["Potli Massage",1299,"1 hr 10 min"],["Full Body Polishing",1599,"1 hr 20 min"],["Hydra Boost Body Polishing",2499,"1 hr 40 min"]]},
-      {name:"Scrub Services",mark:"SC",services:[["Full Body Scrub",699,"1 hr"],["Full Arms with Underarms Scrub",249,"30 min"],["Half Arms Scrub",125,"20 min"],["Full Legs Scrub",299,"30 min"],["Half Legs Scrub",149,"20 min"],["Half Back Scrub",149,"20 min"],["Stomach Scrub",199,"20 min"],["Foot Scrub",99,"20 min"],["Hand Scrub",99,"20 min"],["Full Back Scrub",299,"20 min"]]},
-      {name:"Bleach Services",mark:"BL",services:[["Full Body Bleach",650,"40 min"],["Full Body + Face & Neck Bleach",799,"1 hr"],["Face + Neck Bleach",199,"20 min"],["Full Arms Bleach",199,"20 min"],["Half Arms Bleach",99,"10 min"],["Full Legs Bleach",399,"20 min"],["Half Legs Bleach",199,"20 min"],["Full Back Bleach",299,"30 min"],["Half Back Bleach",150,"20 min"],["Underarms Bleach",99,"20 min"],["Foot Bleach",149,"20 min"]]},
-      {name:"D-Tan Services",mark:"DT",services:[["Full Body D-Tan",599,"40 min"],["Full Body + Face & Neck D-Tan",749,"1 hr"],["Face + Neck D-Tan",175,"20 min"],["Full Arms D-Tan",175,"20 min"],["Half Arms D-Tan",75,"20 min"],["Full Legs D-Tan",349,"20 min"],["Half Legs D-Tan",175,"20 min"],["Full Back D-Tan",249,"20 min"],["Half Back D-Tan",125,"10 min"],["Underarms D-Tan",49,"20 min"],["Foot D-Tan",99,"20 min"]]}
-    ];
+  {
+    "name": "Facial",
+    "mark": "FS",
+    "services": [
+      [
+        "VLCC Facial",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "Aroma Magic Skin Glow Facial",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Aroma Magic Pearl Facial",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Fruit Facial",
+        649,
+        "Confirm duration",
+        "₹649"
+      ],
+      [
+        "Vit-C Brightening Facial",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Korean Glass Skin 6 Steps Facial",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Anti Tan Facial",
+        799,
+        "Confirm duration",
+        "₹799"
+      ],
+      [
+        "Professional Diamond Facial",
+        799,
+        "Confirm duration",
+        "₹799"
+      ],
+      [
+        "Lotus Natural Glow Facial",
+        899,
+        "Confirm duration",
+        "₹899"
+      ],
+      [
+        "FYC Sun Protection Facial",
+        899,
+        "Confirm duration",
+        "₹899"
+      ],
+      [
+        "Ice Cream Facial 7s",
+        999,
+        "Confirm duration",
+        "₹999"
+      ],
+      [
+        "FYC Hydra-Boost Facial",
+        1699,
+        "Confirm duration",
+        "₹1,699"
+      ],
+      [
+        "Korean Glass Skin 9 Steps Facial",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ],
+      [
+        "O3+ Shine & Glow Facial",
+        1299,
+        "Confirm duration",
+        "₹1,299"
+      ],
+      [
+        "O3+ Bridal Oxy Glow Facial",
+        1599,
+        "Confirm duration",
+        "₹1,599"
+      ],
+      [
+        "O3+ Bridal Vit C Glow Facial",
+        1699,
+        "Confirm duration",
+        "₹1,699"
+      ],
+      [
+        "Japanese Hydra Water Facial (Manual)",
+        1499,
+        "Confirm duration",
+        "₹1,499"
+      ],
+      [
+        "KANPEKI HYDRA SHINE Facial (5 Steps)",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ],
+      [
+        "KANPEKI IVORY WHITE Facial (7 Steps)",
+        1399,
+        "Confirm duration",
+        "₹1,399"
+      ],
+      [
+        "KANPEKI PURA BRIGHT Facial (7 Steps)",
+        1499,
+        "Confirm duration",
+        "₹1,499"
+      ],
+      [
+        "KANPEKI GLASS GLOW Facial (11 Steps)",
+        1999,
+        "Confirm duration",
+        "₹1,999"
+      ],
+      [
+        "Hydra Machine Facial (7 Steps)",
+        2499,
+        "Confirm duration",
+        "₹2,499"
+      ],
+      [
+        "Advance Hydra Machine Facial",
+        2999,
+        "Confirm duration",
+        "₹2,999"
+      ]
+    ]
+  },
+  {
+    "name": "Clean-Up",
+    "mark": "CL",
+    "services": [
+      [
+        "VLCC Clean-Up",
+        439,
+        "Confirm duration",
+        "₹439"
+      ],
+      [
+        "Asta Berry Clean-Up",
+        449,
+        "Confirm duration",
+        "₹449"
+      ],
+      [
+        "Raga Clean-Up",
+        449,
+        "Confirm duration",
+        "₹449"
+      ],
+      [
+        "Fruit Clean-Up",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "Anti Tan Clean-Up",
+        599,
+        "Confirm duration",
+        "₹599"
+      ],
+      [
+        "O3+ Skin Whitening Clean-Up",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Korean Skin Glow Clean-Up",
+        649,
+        "Confirm duration",
+        "₹649"
+      ]
+    ]
+  },
+  {
+    "name": "Waxing",
+    "mark": "WX",
+    "services": [
+      [
+        "Full Arms Honey (Chocolate) Wax",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Full Arms Rica Wax",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Full Legs Honey (Chocolate) Wax",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Full Legs Rica Wax",
+        449,
+        "Confirm duration",
+        "₹449"
+      ],
+      [
+        "Full Back Honey (Chocolate) Wax",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Full Back Rica Wax",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Stomach Honey (Chocolate) Wax",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Stomach Rica Wax",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Underarms Honey (Chocolate) Wax",
+        65,
+        "Confirm duration",
+        "₹65"
+      ],
+      [
+        "Underarms Rica Wax",
+        99,
+        "Confirm duration",
+        "₹99"
+      ],
+      [
+        "Full Arms + Underarms Honey (Chocolate) Wax",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Full Arms + Underarms Rica Wax",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Full Arms + Half Legs + Underarms Honey (Chocolate) Wax",
+        489,
+        "Confirm duration",
+        "₹489"
+      ],
+      [
+        "Full Arms + Half Legs + Underarms Rica Wax",
+        749,
+        "Confirm duration",
+        "₹749"
+      ],
+      [
+        "Full Arms + Full Legs + Underarms Honey (Chocolate) Wax",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "Full Arms + Full Legs + Underarms Rica Wax",
+        849,
+        "Confirm duration",
+        "₹849"
+      ],
+      [
+        "Buttocks Honey (Chocolate) Wax",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Buttocks Rica Wax",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Bikini Honey (Chocolate) Wax",
+        549,
+        "Confirm duration",
+        "₹549"
+      ],
+      [
+        "Bikini Rica Wax",
+        599,
+        "Confirm duration",
+        "₹599"
+      ],
+      [
+        "Bikini + Buttocks Honey (Chocolate) Wax",
+        849,
+        "Confirm duration",
+        "₹849"
+      ],
+      [
+        "Bikini + Buttocks Rica Wax",
+        999,
+        "Confirm duration",
+        "₹999"
+      ],
+      [
+        "Full Body Honey (Chocolate) Wax",
+        849,
+        "Confirm duration",
+        "₹849"
+      ],
+      [
+        "Full Body Rica Wax",
+        1599,
+        "Confirm duration",
+        "₹1,599"
+      ],
+      [
+        "Full Body + Bikini Honey (Chocolate) Wax",
+        1349,
+        "Confirm duration",
+        "₹1,349"
+      ],
+      [
+        "Full Body + Bikini Rica Wax",
+        2249,
+        "Confirm duration",
+        "₹2,249"
+      ],
+      [
+        "Chin Waxing",
+        59,
+        "Confirm duration",
+        "₹59"
+      ],
+      [
+        "Forehead Waxing",
+        59,
+        "Confirm duration",
+        "₹59"
+      ],
+      [
+        "Side Locks Waxing",
+        99,
+        "Confirm duration",
+        "₹99"
+      ],
+      [
+        "Upper / Lower Lips Waxing",
+        59,
+        "Confirm duration",
+        "₹59"
+      ],
+      [
+        "Full Face Waxing",
+        299,
+        "Confirm duration",
+        "₹299"
+      ]
+    ]
+  },
+  {
+    "name": "Hair",
+    "mark": "HR",
+    "services": [
+      [
+        "Classic Hair Spa",
+        649,
+        "Confirm duration",
+        "₹649"
+      ],
+      [
+        "L’Oréal Hair Spa",
+        849,
+        "Confirm duration",
+        "₹849"
+      ],
+      [
+        "Hair Oiling",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Head Wash",
+        99,
+        "Confirm duration",
+        "₹99"
+      ],
+      [
+        "Root Touch-Up",
+        599,
+        "Confirm duration",
+        "₹599"
+      ],
+      [
+        "Colour / Henna Application",
+        199,
+        "Confirm duration",
+        "₹199"
+      ],
+      [
+        "Temporary Hair Straightening",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "Temporary Curling / Styling",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Hair Smoothening (Starting from ₹2,499)",
+        2499,
+        "Confirm duration",
+        "From ₹2,499"
+      ],
+      [
+        "Keratin Treatment (Starting from ₹1,999)",
+        1999,
+        "Confirm duration",
+        "From ₹1,999"
+      ]
+    ]
+  },
+  {
+    "name": "Bleach",
+    "mark": "BL",
+    "services": [
+      [
+        "Half Back Bleach",
+        299,
+        "20 min",
+        "₹299"
+      ],
+      [
+        "Full Back Bleach",
+        399,
+        "30 min",
+        "₹399"
+      ],
+      [
+        "Face & Neck Bleach",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Full Body + Face & Neck Bleach",
+        999,
+        "1 hr",
+        "₹999"
+      ]
+    ]
+  },
+  {
+    "name": "De-Tan",
+    "mark": "DT",
+    "services": [
+      [
+        "Full Arms De-Tan",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Full Legs De-Tan",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "Full Body De-Tan",
+        949,
+        "Confirm duration",
+        "₹949"
+      ],
+      [
+        "Full Back De-Tan",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Stomach De-Tan",
+        199,
+        "Confirm duration",
+        "₹199"
+      ],
+      [
+        "Half Back De-Tan",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Face & Neck De-Tan",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Full Body + Face & Neck De-Tan",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ]
+    ]
+  },
+  {
+    "name": "Manicure & Pedicure",
+    "mark": "MP",
+    "services": [
+      [
+        "Classic Manicure",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Fragranced Manicure",
+        449,
+        "Confirm duration",
+        "₹449"
+      ],
+      [
+        "De-Tan Manicure",
+        449,
+        "Confirm duration",
+        "₹449"
+      ],
+      [
+        "7 Steps Luxe Manicure",
+        549,
+        "Confirm duration",
+        "₹549"
+      ],
+      [
+        "O3+ Bubble Gum Manicure",
+        599,
+        "Confirm duration",
+        "₹599"
+      ],
+      [
+        "Classic Pedicure",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Fragranced Pedicure",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "De-Tan Pedicure",
+        499,
+        "Confirm duration",
+        "₹499"
+      ],
+      [
+        "7 Steps Luxe Pedicure",
+        649,
+        "Confirm duration",
+        "₹649"
+      ],
+      [
+        "O3+ Bubble Gum Pedicure",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Classic Manicure & Pedicure Combo",
+        699,
+        "Confirm duration",
+        "₹699"
+      ],
+      [
+        "Fragranced Manicure & Pedicure Combo",
+        849,
+        "Confirm duration",
+        "₹849"
+      ],
+      [
+        "De-Tan Manicure & Pedicure Combo",
+        899,
+        "Confirm duration",
+        "₹899"
+      ],
+      [
+        "7 Steps Luxe Manicure & Pedicure Combo",
+        1099,
+        "Confirm duration",
+        "₹1,099"
+      ],
+      [
+        "FYC Hydra Boost Manicure & Pedicure Combo",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ],
+      [
+        "O3+ Bubble Gum Manicure & Pedicure Combo",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ]
+    ]
+  },
+  {
+    "name": "Nails — Extensions, Art & Paint",
+    "mark": "NA",
+    "services": [
+      [
+        "Gel Nail Extensions (Full Set)",
+        1000,
+        "Confirm duration",
+        "₹1000–₹1800"
+      ],
+      [
+        "Acrylic Nail Extensions (Full Set)",
+        1200,
+        "Confirm duration",
+        "₹1200–₹2200"
+      ],
+      [
+        "Overlay on Natural Nails (Gel/Acrylic)",
+        800,
+        "Confirm duration",
+        "₹800–₹1200"
+      ],
+      [
+        "Extension Infills / Refilling",
+        999,
+        "Confirm duration",
+        "₹999–₹1500"
+      ],
+      [
+        "Temporary Clip-on Extensions",
+        799,
+        "Confirm duration",
+        "₹799–₹1000"
+      ],
+      [
+        "Extension Removal (Safe Take-off)",
+        400,
+        "Confirm duration",
+        "₹400–₹600"
+      ],
+      [
+        "Gel Nail Paint (Hands or Feet)",
+        499,
+        "Confirm duration",
+        "₹499–₹799"
+      ],
+      [
+        "Gel Paint Combo (Hands + Feet)",
+        899,
+        "Confirm duration",
+        "₹899–₹1300"
+      ],
+      [
+        "Classic French Polish",
+        599,
+        "Confirm duration",
+        "₹599–₹850"
+      ],
+      [
+        "Nail Art (Per Finger - Glitter/Stones/3D)",
+        50,
+        "Confirm duration",
+        "₹50–₹100 per finger"
+      ],
+      [
+        "Chrome / Cat-Eye Effect (Full Set) - Add-on",
+        300,
+        "Confirm duration",
+        "₹300–₹500 extra for the full set"
+      ]
+    ]
+  },
+  {
+    "name": "Massage",
+    "mark": "BM",
+    "services": [
+      [
+        "Head Massage",
+        199,
+        "20 min",
+        "₹199"
+      ],
+      [
+        "Feet Massage",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Full Arms Massage",
+        249,
+        "Confirm duration",
+        "₹249"
+      ],
+      [
+        "Back Massage",
+        299,
+        "20 min",
+        "₹299"
+      ],
+      [
+        "Full Legs Massage",
+        349,
+        "Confirm duration",
+        "₹349"
+      ],
+      [
+        "Head & Back Massage",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Head & Shoulders Massage",
+        279,
+        "Confirm duration",
+        "₹279"
+      ],
+      [
+        "Special Face Massage",
+        399,
+        "Confirm duration",
+        "₹399"
+      ],
+      [
+        "Full Body Massage",
+        799,
+        "50 min",
+        "₹799"
+      ],
+      [
+        "Full Body Massage with Head Massage",
+        999,
+        "Confirm duration",
+        "₹999"
+      ],
+      [
+        "Full Body Massage with Scrub",
+        1199,
+        "Confirm duration",
+        "₹1,199"
+      ]
+    ]
+  },
+  {
+    "name": "Body Polishing",
+    "mark": "BP",
+    "services": [
+      [
+        "Classic Full Body Polishing",
+        1099,
+        "Confirm duration",
+        "₹1,099"
+      ],
+      [
+        "Deluxe Body Polishing",
+        1499,
+        "Confirm duration",
+        "₹1,499"
+      ],
+      [
+        "FYC Hydra Boost Body Polishing",
+        2499,
+        "Confirm duration",
+        "₹2,499"
+      ]
+    ]
+  },
+  {
+    "name": "Body Scrub",
+    "mark": "SC",
+    "services": [
+      [
+        "Half Back Scrub",
+        299,
+        "20 min",
+        "₹299"
+      ],
+      [
+        "Full Back Scrub",
+        349,
+        "20 min",
+        "₹349"
+      ],
+      [
+        "Full Hands Scrub",
+        299,
+        "Confirm duration",
+        "₹299"
+      ],
+      [
+        "Half Legs Scrub",
+        299,
+        "20 min",
+        "₹299"
+      ],
+      [
+        "Full Legs Scrub",
+        399,
+        "30 min",
+        "₹399"
+      ],
+      [
+        "Full Body Scrub",
+        499,
+        "1 hr",
+        "₹499"
+      ]
+    ]
+  },
+  {
+    "name": "Threading",
+    "mark": "TH",
+    "services": [
+      [
+        "Chin Threading",
+        49,
+        "Confirm duration",
+        "₹49"
+      ],
+      [
+        "Forehead Threading",
+        49,
+        "Confirm duration",
+        "₹49"
+      ],
+      [
+        "Upper / Lower Lips Threading",
+        49,
+        "Confirm duration",
+        "₹49"
+      ],
+      [
+        "Eyebrow Threading",
+        49,
+        "Confirm duration",
+        "₹49"
+      ],
+      [
+        "Full Face Threading",
+        199,
+        "Confirm duration",
+        "₹199"
+      ]
+    ]
+  }
+];
 
     const selected = new Map();
     const container = document.getElementById("categories");
@@ -87,11 +955,11 @@
       const grid = document.createElement("div");
       grid.className = "services";
       category.services.forEach(service => {
-        const [name, price, duration] = service;
+        const [name, price, duration, priceLabel] = service;
         const index = String(serviceIndex++);
         const card = document.createElement("article");
         card.className = "service";
-        card.innerHTML = `<h3>${name}</h3><div class="service-meta"><span class="price">₹${price.toLocaleString("en-IN")}</span><span class="duration">${duration}</span></div><label class="select"><input type="checkbox" data-index="${index}" data-name="${name}" data-price="${price}" data-duration="${duration}"><span>Select ${name}</span></label>`;
+        card.innerHTML = `<h3>${name}</h3><div class="service-meta"><span class="price">${priceLabel}</span><span class="duration">${duration}</span></div><label class="select"><input type="checkbox" data-index="${index}" data-name="${name}" data-price="${price}" data-price-label="${priceLabel}" data-duration="${duration}"><span>Select ${name}</span></label>`;
         grid.appendChild(card);
       });
       inner.appendChild(grid); content.appendChild(inner); box.append(header, content); container.appendChild(box);
@@ -106,14 +974,14 @@
       const input = event.target;
       if (!input.matches('input[type="checkbox"]')) return;
       const card = input.closest(".service");
-      if (input.checked) { selected.set(input.dataset.index,{name:input.dataset.name,price:Number(input.dataset.price),duration:input.dataset.duration}); card.classList.add("selected"); }
+      if (input.checked) { selected.set(input.dataset.index,{name:input.dataset.name,price:Number(input.dataset.price),duration:input.dataset.duration,priceLabel:input.dataset.priceLabel}); card.classList.add("selected"); }
       else { selected.delete(input.dataset.index); card.classList.remove("selected"); }
       updateSummary();
     });
 
     function updateSummary(){
       let total=0; const items=[];
-      selected.forEach(service=>{ total+=service.price; items.push(`<div class="selected-item"><span>${service.name}</span><b>₹${service.price.toLocaleString("en-IN")}</b></div>`); });
+      selected.forEach(service=>{ total+=service.price; items.push(`<div class="selected-item"><span>${service.name}</span><b>${service.priceLabel}</b></div>`); });
       document.getElementById("count").textContent=selected.size;
       document.getElementById("mobileCount").textContent=selected.size;
       document.getElementById("total").textContent="₹"+total.toLocaleString("en-IN");
@@ -130,7 +998,7 @@
       if(!name||!phone||!date||!hour||!minute||!address){ showError("Please fill your name, phone number, preferred date, time and service address."); return; }
       if(!/^\d{10}$/.test(phone.replace(/\D/g,""))){ showError("Please enter a valid 10-digit phone number."); return; }
       if(!/^(0[1-9]|1[0-2]):[0-5][0-9]$/.test(time)||!["AM","PM"].includes(ampm)){ showError("Please select the hour, minutes and AM or PM."); return; }
-      let total=0,list=""; selected.forEach(service=>{total+=service.price;list+=`• ${service.name} — ₹${service.price.toLocaleString("en-IN")} (${service.duration})\n`;});
+      let total=0,list=""; selected.forEach(service=>{total+=service.price;list+=`• ${service.name} — ${service.priceLabel} (${service.duration})\n`;});
       const message=`Hello HerGlowAtHome,\n\nI would like to book:\n${list}\nEstimated Total: ₹${total.toLocaleString("en-IN")}\n\nName: ${name}\nPhone: ${phone}\nPreferred Date: ${date}\nPreferred Time: ${time} ${ampm}\nService Address: ${address}\nNote: ${note||"None"}\n\nPlease confirm availability. Thank you.`;
       window.open("https://wa.me/917087128778?text="+encodeURIComponent(message),"_blank","noopener");
     }
