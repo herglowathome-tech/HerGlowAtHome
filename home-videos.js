@@ -5,7 +5,10 @@
   const videos = [...root.querySelectorAll('video')];
   if (!track || !videos.length) return;
   root.querySelector('.film-controls')?.remove();
+  const slides = [...root.querySelectorAll('.film-slide')];
+  const dots = [...root.querySelectorAll('.film-dot')];
   let index = 0, visible = true;
+  function fitHeight() { track.style.height = slides[index].offsetHeight + 'px'; }
   videos.forEach(video => {
     video.muted = true;
     video.defaultMuted = true;
@@ -23,8 +26,10 @@
     index = (next + videos.length) % videos.length;
     track.style.transform = `translateX(-${index * 100}%)`;
     videos.forEach((video, i) => {
-      video.parentElement.setAttribute('aria-hidden', String(i !== index));
+      slides[i].setAttribute('aria-hidden', String(i !== index));
+      dots[i]?.setAttribute('aria-current', String(i === index));
     });
+    fitHeight();
     videos[index].currentTime = 0;
     resume();
   }
@@ -51,5 +56,8 @@
     if (document.hidden) videos[index].pause();
     else resume();
   });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  const resizeObserver = new ResizeObserver(fitHeight);
+  slides.forEach(slide => resizeObserver.observe(slide));
   show(0);
 })();

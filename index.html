@@ -23,11 +23,21 @@
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr;padding-top:60px}.showcase{max-width:590px}.cards{grid-template-columns:1fr}.services-preview{grid-template-columns:1fr 1fr}.area-box{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.links a:not(.nav-cta){display:none}}
     @media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.brand{font-size:17px}.monogram{width:38px;height:38px}.nav-cta{padding:9px 13px}.hero-grid{gap:42px;padding:50px 0 66px}.hero h1{font-size:48px}.lead{font-size:16px}.actions .btn{width:100%}.trust{gap:12px;flex-direction:column}.visual{min-height:400px;padding:27px 22px;border-radius:28px}.visual h2{font-size:32px}.rating{right:10px;bottom:-25px}section{padding:70px 0}.services-preview{grid-template-columns:1fr 1fr}.service-tile{min-height:145px;padding:18px}.area-box{padding:34px 24px}.area-box h2{font-size:32px}.review-card{padding:32px 22px}.review-card blockquote{font-size:23px}.footer-grid{grid-template-columns:1fr}.wa-float{width:52px;height:52px}}
 
-    .film-strip{padding:0;background:#21112f;position:relative;overflow:hidden}
-    .film-track{display:flex;transition:transform .55s ease;touch-action:pan-y}
-    .film-slide{flex:0 0 100%;min-width:0;display:flex;justify-content:center;background:radial-gradient(ellipse at center,#573177,#21112f)}
-    .film-slide video{display:block;width:100%;height:min(72svh,640px);object-fit:contain}
-    @media(prefers-reduced-motion:reduce){.film-track{transition:none}}
+    .film-strip{padding:0;background:#fff;position:relative;overflow:hidden}
+    .film-track{display:flex;align-items:flex-start;transition:transform .55s ease;touch-action:pan-y}
+    .film-slide{flex:0 0 100%;min-width:0;background:#fff}
+    .film-slide video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border:0;border-radius:0}
+    .film-copy{padding:28px 24px 12px;max-width:760px;margin:auto}
+    .film-label{display:inline-block;background:var(--purple-deep);color:#fff;padding:4px 10px;font-size:14px;font-weight:600}
+    .film-copy h2{font-size:clamp(30px,5vw,52px);line-height:1.12;letter-spacing:-.8px;margin:15px 0 12px}
+    .film-copy p{font-size:16px;line-height:1.65;color:var(--muted);margin:0}
+    .film-dots{display:flex;justify-content:center;gap:2px;padding:8px 0 16px}
+    .film-dot{display:grid;place-items:center;width:44px;height:44px;border:0;padding:0;background:transparent;cursor:pointer}
+    .film-dot::before{content:"";width:9px;height:9px;border-radius:999px;background:#c9bfd7;transition:width .25s,background .25s}
+    .film-dot[aria-current="true"]::before{width:26px;background:var(--purple)}
+    .film-dot:focus-visible{outline:2px solid var(--purple);outline-offset:0;border-radius:8px}
+    @media(min-width:760px){.film-slide{display:grid;grid-template-columns:1fr 1fr;align-items:center}.film-slide video{height:min(82svh,850px);aspect-ratio:auto;object-fit:cover}.film-copy{padding:48px;max-width:650px}}
+    @media(prefers-reduced-motion:reduce){.film-track,.film-dot::before{transition:none}}
   </style>
 </head>
 <body>
@@ -39,10 +49,26 @@
   </nav>
 
 
-  <section class="film-strip" aria-label="Our work videos" aria-roledescription="carousel">
-    <div class="film-track"><div class="film-slide" role="group" aria-label="Video 1 of 3"><video muted playsinline preload="auto" autoplay src="videos/work-2.mp4" aria-label="HerGlowAtHome work video 1"></video></div>
-<div class="film-slide" role="group" aria-label="Video 2 of 3"><video muted playsinline preload="none"  src="videos/work-3.mp4" aria-label="HerGlowAtHome work video 2"></video></div>
-<div class="film-slide" role="group" aria-label="Video 3 of 3"><video muted playsinline preload="none"  src="videos/work-4.mp4" aria-label="HerGlowAtHome work video 3"></video></div></div>
+  <section class="film-strip" aria-label="HerGlowAtHome work videos" aria-roledescription="carousel">
+    <div class="film-track">
+      <article class="film-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Nail Art & Extensions" aria-hidden="false">
+        <video muted playsinline preload="auto" autoplay src="videos/work-2.mp4" aria-label="Nail art and extensions"></video>
+        <div class="film-copy"><span class="film-label">Nail Art & Extensions</span><h2>Little details. Beautiful nails.</h2><p>From elegant finishes to statement nail art, enjoy beautifully styled nails with personal care in the comfort of your home.</p></div>
+      </article>
+      <article class="film-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Facials & Skincare" aria-hidden="true">
+        <video muted playsinline preload="none" src="videos/work-3.mp4" aria-label="Facial care"></video>
+        <div class="film-copy"><span class="film-label">Facials & Skincare</span><h2>Your time to glow.</h2><p>Relax with a facial chosen for your skin’s needs. Thoughtful skincare and a fresh, pampered feeling, brought to your doorstep.</p></div>
+      </article>
+      <article class="film-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Hair Transformation" aria-hidden="true">
+        <video muted playsinline preload="none" src="videos/work-4.mp4" aria-label="Hair transformation"></video>
+        <div class="film-copy"><span class="film-label">Hair Transformation</span><h2>Beautiful hair, at home.</h2><p>Discover our hair smoothening and keratin services, with professional care to help you achieve a smoother, more polished look.</p></div>
+      </article>
+    </div>
+    <div class="film-dots" aria-label="Choose a work video">
+      <button class="film-dot" type="button" aria-label="Show video 1: Nail Art & Extensions" aria-current="true"></button>
+      <button class="film-dot" type="button" aria-label="Show video 2: Facials & Skincare" aria-current="false"></button>
+      <button class="film-dot" type="button" aria-label="Show video 3: Hair Transformation" aria-current="false"></button>
+    </div>
   </section>
 
   <header class="hero">
@@ -50,7 +76,7 @@
       <div>
         <span class="pill"><i></i> Ladies-only home salon</span>
         <h1>Your beauty time, <span>beautifully effortless.</span></h1>
-        <p class="lead">Premium beauty, hair and wellness services delivered by professionals to the comfort and privacy of your home.</p>
+        <p class="lead">HerGlowAtHome brings ladies-only beauty, hair and wellness services to your doorstep across Chandigarh, Mohali, Panchkula and Kharar. Professional care, in the comfort and privacy of your home. <strong>You Glow, We Go.</strong></p>
         <div class="actions"><a class="btn btn-primary" href="services.html">Explore Services & Book <b>→</b></a><a class="btn btn-soft" href="tel:+917087128778">Call 70871 28778</a></div>
         <div class="trust"><span><b class="check">✓</b> At-home comfort</span><span><b class="check">✓</b> Professional care</span><span><b class="check">✓</b> Transparent pricing</span></div>
         <div class="social-row"><span class="social-label">Follow us:</span><a class="social-link" href="https://www.instagram.com/herglowathome/" target="_blank" rel="noopener">◎ Instagram</a><a class="social-link" href="https://www.facebook.com/share/1H6tWWLqWZ/" target="_blank" rel="noopener">f Facebook</a><a class="social-link" href="https://www.linkedin.com/in/rajdeep-kaur-b24388423/" target="_blank" rel="noopener">in LinkedIn</a></div>
@@ -112,6 +138,6 @@
 
   <footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand footer-brand" href="index.html"><span class="monogram">HG</span><span>HerGlowAtHome</span></a><p>Premium beauty services at your doorstep. You Glow, We Go.</p></div><div><div class="footer-title">Explore</div><a href="index.html">Home</a><a href="services.html">Services & Booking</a><a href="gallery.html">Our Work Videos</a><a href="#reviews">Client Reviews</a></div><div><div class="footer-title">Connect</div><a href="tel:+917087128778">+91 70871 28778</a><a href="mailto:herglowathome@gmail.com">herglowathome@gmail.com</a><a href="https://www.instagram.com/herglowathome/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/share/1H6tWWLqWZ/" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/in/rajdeep-kaur-b24388423/" target="_blank" rel="noopener">LinkedIn</a></div></div><div class="copyright">© 2026 HerGlowAtHome · Ladies-only home salon service</div></div></footer>
   <a class="wa-float" href="https://wa.me/917087128778?text=Hello%20HerGlowAtHome%2C%20I%20would%20like%20to%20book%20a%20beauty%20service." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
-<script src="home-videos.js?v=muted-autoplay-2"></script>
+<script src="home-videos.js?v=full-width-stories-3"></script>
 </body>
 </html>
