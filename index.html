@@ -37,6 +37,13 @@
     .film-dot[aria-current="true"]::before{width:26px;background:var(--purple)}
     .film-dot:focus-visible{outline:2px solid var(--purple);outline-offset:0;border-radius:8px}
     @media(min-width:760px){.film-slide{display:grid;grid-template-columns:1fr 1fr;align-items:center}.film-slide video{height:min(82svh,850px);aspect-ratio:auto;object-fit:cover}.film-copy{padding:48px;max-width:650px}}
+    @media(max-width:759px){
+      .film-slide video{height:min(46vh,calc(100vh - 330px));height:min(46svh,calc(100svh - 330px));min-height:120px;aspect-ratio:auto}
+      .film-copy{padding:16px 20px 8px}
+      .film-copy h2{font-size:26px;line-height:1.15;margin:10px 0 8px}
+      .film-copy p{font-size:16px;line-height:1.45}
+      .film-dots{padding:0 0 8px}
+    }
     @media(prefers-reduced-motion:reduce){.film-track,.film-dot::before{transition:none}}
   </style>
 </head>
